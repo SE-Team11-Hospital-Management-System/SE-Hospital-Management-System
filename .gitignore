@@ -1,0 +1,14 @@
+# build output
+/build/
+/build-*/
+/cmake-build-*/
+/out/
+# runtime data created when you run hms (never commit real data)
+/data/
+/backup/
+*.tmp
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
