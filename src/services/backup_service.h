@@ -18,6 +18,6 @@ public:
     const std::string& backupRoot() const { return backupRoot_; }
 private:
     std::string dataDir_, backupRoot_;
-    AuditService& audit_;
+    [[maybe_unused]] AuditService& audit_;
 };
 }  // namespace hms

@@ -30,7 +30,7 @@ public:
     static Result<void> validate(const PatientInput& in, const std::string& today);   // field-specific E010
 private:
     PatientRepository& repo_;
-    AuditService& audit_;
+    [[maybe_unused]] AuditService& audit_;
     std::string path_;
     TodayFn today_;
 };
