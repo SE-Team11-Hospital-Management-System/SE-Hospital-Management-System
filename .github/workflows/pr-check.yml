@@ -1,0 +1,58 @@
+# TASK-04: automatic checks on every pull request.
+# 1. The PR title must start with the backlog ID, e.g. "HMS-F-010: Register patient" or "TASK-02: Repo skeleton".
+# 2. The PR description must link the issue it closes, e.g. "Closes #12".
+# 3. Posts a short checklist comment for the reviewer the first time the PR is opened.
+name: PR check
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  pr-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Title starts with a backlog ID
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          echo "PR title: $TITLE"
+          if echo "$TITLE" | grep -Eq '^(HMS-(F|NF|SEC)-[0-9]{3}|TASK-[0-9]{2}|DOCS)\b'; then
+            echo "OK"
+          else
+            echo "::error::PR title must start with the backlog ID, e.g. 'HMS-F-010: Register patient', 'TASK-02: Repo skeleton' or 'DOCS: Sprint 1 review'."
+            exit 1
+          fi
+      - name: Description links an issue
+        env:
+          BODY: ${{ github.event.pull_request.body }}
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          if echo "$TITLE" | grep -Eq '^DOCS'; then echo "Docs PR - no issue needed"; exit 0; fi
+          if echo "$BODY" | grep -Eiq '(closes|fixes|resolves|part of) #[0-9]+'; then
+            echo "OK"
+          else
+            echo "::error::Add 'Closes #<issue number>' (or 'Part of #<issue number>') to the PR description, one line per issue."
+            exit 1
+          fi
+      - name: Reviewer checklist comment
+        if: github.event.action == 'opened'
+        continue-on-error: true
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number,
+              body: [
+                "Reviewer checklist (repo owner reviews and merges, never the author):",
+                "- [ ] CI is green (build + tests on Linux and Windows, AddressSanitizer)",
+                "- [ ] Code matches the SRS requirement IDs in the title / issue",
+                "- [ ] New or changed behaviour has a unit test named after its TC-ID",
+                "- [ ] Only the author's own files are changed (see CODEOWNERS)",
+                "- [ ] Approve, then **Squash and merge**, then delete the branch"
+              ].join("\n")
+            });

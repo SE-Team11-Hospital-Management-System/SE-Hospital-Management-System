@@ -1,0 +1,56 @@
+# TASK-04: build and test every push and every pull request (Part-2 deliverable 2b).
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  linux:
+    name: Build + unit tests (Linux, g++)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+      - name: Build
+        run: cmake --build build -j 4
+      - name: Run tests
+        run: ctest --test-dir build --output-on-failure
+
+  windows:
+    # Same tool-chain the team uses on Windows (MSYS2 UCRT64 g++), see docs/SETUP.md
+    name: Build + unit tests (Windows, MSYS2 g++)
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: UCRT64
+          update: false
+          install: mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-ninja
+      - name: Configure
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug
+      - name: Build
+        run: cmake --build build
+      - name: Run tests
+        run: ctest --test-dir build --output-on-failure
+
+  memory-safety:
+    # HMS-NF-009 / HMS-SEC-005: run the tests under AddressSanitizer + UBSan
+    name: Tests with AddressSanitizer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure (sanitizers on)
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DHMS_SANITIZE=ON
+      - name: Build
+        run: cmake --build build -j 4
+      - name: Run tests
+        run: ctest --test-dir build --output-on-failure
