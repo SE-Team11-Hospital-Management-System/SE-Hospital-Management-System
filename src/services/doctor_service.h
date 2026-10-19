@@ -36,10 +36,10 @@ public:
 private:
     Result<void> validateInput(const DoctorInput& in) const;
     Result<void> persist() const;
-    AuditService& audit_;
+    [[maybe_unused]] AuditService& audit_;
     std::string path_;
     IsDoctorUserFn isDoctorUser_;
     std::map<std::string, Doctor> doctors_;
-    int counter_{0};
+    [[maybe_unused]] int counter_{0};
 };
 }  // namespace hms

@@ -37,13 +37,13 @@ public:
 private:
     bool isSlotFree(const std::string& doctorId, const std::string& slot) const;
     Result<void> persist() const;
-    PatientRepository& patients_;
-    DoctorService& doctors_;
-    AuditService& audit_;
+    [[maybe_unused]] PatientRepository& patients_;
+    [[maybe_unused]] DoctorService& doctors_;
+    [[maybe_unused]] AuditService& audit_;
     std::string path_;
     NowFn now_;
     std::map<std::string, Appointment> appts_;
     std::map<std::string, std::string> taken_;                              // "doctorId|slot" -> appointmentId (fast conflict check)
-    int counter_{0};
+    [[maybe_unused]] int counter_{0};
 };
 }  // namespace hms
