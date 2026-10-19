@@ -1,0 +1,39 @@
+# Buddy review: GitHub automatically asks the right person to review each PR.
+#   Paras  <-> Shristi      Saurav <-> Pranav
+# The last matching line wins.
+
+*                                   @ParasAgarwal23 @PranavdaSupreme1
+
+# SF-1 Login, roles, user accounts (author: Paras) -> reviewed by Shristi
+/src/security/                      @shristiglitter0820
+/src/services/auth_service.*        @shristiglitter0820
+/src/ui/app_shell.cpp               @shristiglitter0820
+/tests/test_security.cpp            @shristiglitter0820
+/tests/test_auth.cpp                @shristiglitter0820
+
+# SF-2 Patients + skeleton (author: Saurav) -> reviewed by Pranav
+/CMakeLists.txt                     @PranavdaSupreme1
+/src/common/                        @PranavdaSupreme1
+/src/security/validator.*           @PranavdaSupreme1
+/src/data/patient_repository.*      @PranavdaSupreme1
+/src/services/patient_service.*     @PranavdaSupreme1
+/src/ui/patient_menu.cpp            @PranavdaSupreme1
+/tests/test_patient.cpp             @PranavdaSupreme1
+
+# SF-3 Doctors and appointments (author: Pranav) -> reviewed by Saurav
+/src/services/doctor_service.*      @SauravS9
+/src/services/appointment_service.* @SauravS9
+/src/ui/doctor_menu.cpp             @SauravS9
+/src/ui/appointment_menu.cpp        @SauravS9
+/tests/test_doctor.cpp              @SauravS9
+/tests/test_appointment.cpp         @SauravS9
+
+# SF-4 Data storage, backup, CI (author: Shristi) -> reviewed by Paras
+/.github/workflows/                 @ParasAgarwal23
+/src/data/file_store.*              @ParasAgarwal23
+/src/app/bootstrap.*                @ParasAgarwal23
+/src/services/backup_service.*      @ParasAgarwal23
+/src/ui/backup_menu.cpp             @ParasAgarwal23
+/tests/test_filestore.cpp           @ParasAgarwal23
+/tests/test_data.cpp                @ParasAgarwal23
+/tests/test_backup.cpp              @ParasAgarwal23
