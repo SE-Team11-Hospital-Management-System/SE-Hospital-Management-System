@@ -15,6 +15,7 @@ A console program in C++17 that manages patient records, doctors and appointment
 - `HMS_SAD_v1.0.docx` — Software Architecture and Design Specification
 - `HMS_Test_Plan_v1.0.docx` — Software Test Plan (with test cases)
 - `SETUP.md` — how to install the tools and build on your laptop
+- `USER_GUIDE.md` — how to use the program
 - `sprint1/` — Sprint 1 test report, deviations from the documents, demo video
 
 ## Build and run
