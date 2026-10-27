@@ -1,4 +1,4 @@
-// C3 AuthService: login with lock-out, user management (HMS-F-001/002/004, SEC-001/008).
+// C3 AuthService: login with lock-out, change password, user management (HMS-F-001/002/004/006, SEC-001/008).
 // Users are saved to <dataDir>/users.dat, one per line:
 //   userId|username|role(0=Admin,1=Receptionist,2=Doctor)|salt|passwordHash|active(1/0)|failedAttempts|lockedUntil(epoch seconds)
 #pragma once
@@ -33,6 +33,8 @@ public:
 
     Result<Session> login(const std::string& username, const std::string& password);
     Result<void> logout(const Session& s);
+    // HMS-F-006: current password must match; new one 8-32 chars, a letter and a digit, different from the current one.
+    Result<void> changePassword(const Session& s, const std::string& currentPwd, const std::string& newPwd);
     Result<std::string> createUser(const Session& admin, const std::string& username, const std::string& tempPwd, Role role);
     Result<void> setUserStatus(const Session& admin, const std::string& userId, bool active);
     Result<std::vector<User>> listUsers(const Session& admin) const;

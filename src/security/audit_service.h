@@ -17,6 +17,8 @@ public:
     explicit AuditService(std::string logPath);
     void log(const std::string& userId, const std::string& action, const std::string& targetId, bool success);
     std::vector<AuditEntry> readAll() const;
+    // HMS-F-062: entries whose date is within [fromDate, toDate] (YYYY-MM-DD), optionally only one user ID.
+    std::vector<AuditEntry> query(const std::string& fromDate, const std::string& toDate, const std::string& userId = "") const;
     const std::string& path() const { return path_; }
     // Deliberately no edit / delete API (HMS-SEC-003).
 private:
