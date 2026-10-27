@@ -3,6 +3,7 @@
 #include "common/datetime.h"
 #include "data/file_store.h"
 #include "security/access_control.h"
+#include "security/validator.h"
 #include <algorithm>
 #include <cstdio>
 #include <cstdlib>
@@ -133,6 +134,44 @@ Result<void> AppointmentService::markCompleted(const std::string& id) {
     if (it == appts_.end()) return makeError(ErrorCode::E022, "Appointment not found.");
     if (!canChange(it->second.status, AppointmentStatus::Completed)) return notAllowed(it->second.status);
     return setStatus(it->second, AppointmentStatus::Completed);
+}
+
+Result<void> AppointmentService::reschedule(const Session& s, const std::string& id, const std::string& newDoctorId, const std::string& newSlot) {
+    if (auto ok = AccessControl::authorize(s, Operation::BookAppointment, "reschedule"); !ok.ok()) return ok.error();
+    auto it = appts_.find(id);
+    if (it == appts_.end()) return makeError(ErrorCode::E022, "Appointment not found.");
+    Appointment& a = it->second;
+    if (a.status != AppointmentStatus::Scheduled) return notAllowed(a.status);
+    if (a.slotStart <= now_()) return makeError(ErrorCode::E032, "Action not allowed: the appointment has already started.");
+    if (a.doctorId == newDoctorId && a.slotStart == newSlot) return makeError(ErrorCode::E010, "New slot: must differ from the current slot.");
+    if (auto problem = slotProblem(newDoctorId, newSlot)) return *problem;
+    const Appointment before = a;
+    taken_.erase(key(a.doctorId, a.slotStart));                       // move in memory ...
+    a.doctorId = newDoctorId; a.slotStart = newSlot;
+    taken_[key(a.doctorId, a.slotStart)] = a.appointmentId;
+    if (auto w = persist(); !w.ok()) {                                  // ... and undo everything if the save fails
+        taken_.erase(key(a.doctorId, a.slotStart));
+        a = before;
+        taken_[key(a.doctorId, a.slotStart)] = a.appointmentId;
+        return w.error();
+    }
+    audit_.log(s.userId, "APPT_RESCHEDULED", id, true);
+    return {};
+}
+
+Result<std::vector<Appointment>> AppointmentService::schedule(const Session& s, const std::string& doctorId, const std::string& date) const {
+    if (auto ok = AccessControl::authorize(s, Operation::ViewSchedule, "schedule"); !ok.ok()) return ok.error();
+    if (s.role == Role::Doctor && s.doctorId != doctorId) {             // a Doctor sees only their own schedule
+        audit_.log(s.userId, "ACCESS_DENIED", "schedule:" + doctorId, false);
+        return deniedError();
+    }
+    if (!doctors_.exists(doctorId)) return makeError(ErrorCode::E021, "Doctor not found.");
+    if (!Validator::isValidDate(date)) return makeError(ErrorCode::E010, "Date: must be a real date in YYYY-MM-DD format.");
+    std::vector<Appointment> out;
+    for (const auto& [id, a] : appts_)
+        if (a.doctorId == doctorId && dt::dateOf(a.slotStart) == date) out.push_back(a);
+    std::sort(out.begin(), out.end(), [](const Appointment& x, const Appointment& y) { return x.slotStart < y.slotStart; });
+    return out;
 }
 
 Result<std::vector<Appointment>> AppointmentService::forPatient(const Session& s, const std::string& patientId) const {
