@@ -1,5 +1,5 @@
-// C6 AppointmentService: booking with slot-conflict detection, cancel, no-show and the status life-cycle
-// (HMS-F-030, F-031, F-032, F-035). Reschedule and daily schedules follow. Saved to <dataDir>/appointments.dat:
+// C6 AppointmentService: booking with slot-conflict detection, cancel, reschedule, schedules and the
+// status life-cycle (HMS-F-030..035). Saved to <dataDir>/appointments.dat:
 //   appointmentId|patientId|doctorId|slotStart|bookedBy|status(0=Scheduled,1=Completed,2=Cancelled,3=NoShow)
 #pragma once
 #include "common/types.h"
@@ -43,6 +43,10 @@ public:
     Result<void> markNoShow(const Session& s, const std::string& id) { return changeStatus(s, id, AppointmentStatus::NoShow); }
     Result<void> markCompleted(const std::string& id);                     // called by ConsultationService after saving
 
+    // HMS-F-033: atomic - the old slot is released only if the new one is booked.
+    Result<void> reschedule(const Session& s, const std::string& id, const std::string& newDoctorId, const std::string& newSlot);
+    // HMS-F-034: one doctor's appointments on one date, ascending time. A Doctor may only see their own.
+    Result<std::vector<Appointment>> schedule(const Session& s, const std::string& doctorId, const std::string& date) const;
 
 private:
     std::optional<Error> slotProblem(const std::string& doctorId, const std::string& slot) const;
