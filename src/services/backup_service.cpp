@@ -24,7 +24,7 @@ void ownerOnlyFile(const fs::path& p) {
 }  // namespace
 
 Result<std::string> BackupService::createBackup(const Session& s) {
-    if (!AccessControl::isAllowed(s.role, Operation::Backup)) { audit_.log(s.userId, "ACCESS_DENIED", "backup", false); return deniedError(); }
+    if (auto ok = AccessControl::authorize(s, Operation::Backup, "backup"); !ok.ok()) return ok.error();
     std::string name = dt::stamp();
     std::error_code ec;
     for (int i = 2; fs::exists(fs::path(backupRoot_) / name, ec); ++i) name = dt::stamp() + "_" + std::to_string(i);
@@ -42,7 +42,7 @@ Result<std::string> BackupService::createBackup(const Session& s) {
 }
 
 Result<std::vector<std::string>> BackupService::listBackups(const Session& s) const {
-    if (!AccessControl::isAllowed(s.role, Operation::Backup)) { audit_.log(s.userId, "ACCESS_DENIED", "listBackups", false); return deniedError(); }
+    if (auto ok = AccessControl::authorize(s, Operation::Backup, "listBackups"); !ok.ok()) return ok.error();
     std::vector<std::string> out; std::error_code ec;
     for (const auto& e : fs::directory_iterator(backupRoot_, ec))
         if (e.is_directory() && isBackupName(e.path().filename().string())) out.push_back(e.path().filename().string());
@@ -50,8 +50,15 @@ Result<std::vector<std::string>> BackupService::listBackups(const Session& s) co
     return out;
 }
 
+std::string BackupService::latestBackup() const {
+    std::vector<std::string> names; std::error_code ec;
+    for (const auto& e : fs::directory_iterator(backupRoot_, ec))
+        if (e.is_directory() && isBackupName(e.path().filename().string())) names.push_back(e.path().filename().string());
+    return names.empty() ? "" : *std::max_element(names.begin(), names.end());
+}
+
 Result<void> BackupService::restore(const Session& s, const std::string& name, bool confirm) {
-    if (!AccessControl::isAllowed(s.role, Operation::Backup)) { audit_.log(s.userId, "ACCESS_DENIED", "restore", false); return deniedError(); }
+    if (auto ok = AccessControl::authorize(s, Operation::Backup, "restore"); !ok.ok()) return ok.error();
     if (!confirm) return makeError(ErrorCode::E010, "Restore: must be confirmed with Y.");
     if (!isBackupName(name)) return backupFailed();
     const fs::path src = fs::path(backupRoot_) / name;

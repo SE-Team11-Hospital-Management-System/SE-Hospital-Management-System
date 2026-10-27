@@ -23,6 +23,7 @@ public:
                             std::chrono::minutes idleLimit = std::chrono::minutes(10));
     Session create(const std::string& userId, Role role, const std::string& doctorId = "");
     Result<Session> validate(const std::string& token);   // E003 if unknown / idle too long; refreshes activity
+    void attachDoctor(const std::string& token, const std::string& doctorId);   // Doctor login -> own doctor profile
     void end(const std::string& token);
 private:
     Clock clock_;

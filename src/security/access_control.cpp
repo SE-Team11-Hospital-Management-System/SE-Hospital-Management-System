@@ -1,6 +1,12 @@
 #include "security/access_control.h"
+#include "security/audit_service.h"
 
 namespace hms {
+
+namespace {
+SessionManager* g_sessions = nullptr;
+AuditService* g_audit = nullptr;
+}  // namespace
 
 bool AccessControl::isAllowed(Role role, Operation op) {
     const bool A = role == Role::Admin, R = role == Role::Receptionist, D = role == Role::Doctor;
@@ -24,5 +30,23 @@ bool AccessControl::isAllowed(Role role, Operation op) {
         case Operation::ViewMedicalHistory:  return D;             // HMS-F-042: clinical data = Doctors only
     }
     return false;                                                  // deny by default
+}
+
+Result<void> AccessControl::authorize(const Session& s, Operation op, const std::string& action) {
+    if (!isAllowed(s.role, op)) {
+        if (g_audit) g_audit->log(s.userId, "ACCESS_DENIED", action, false);
+        return deniedError();
+    }
+    if (g_sessions) {
+        auto v = g_sessions->validate(s.token);                    // also refreshes the idle timer
+        if (!v.ok()) return v.error();
+    }
+    return {};
+}
+
+void AccessControl::attach(SessionManager* sessions, AuditService* audit) { g_sessions = sessions; g_audit = audit; }
+
+void AccessControl::detach(const SessionManager* sessions) {
+    if (g_sessions == sessions) { g_sessions = nullptr; g_audit = nullptr; }
 }
 }  // namespace hms

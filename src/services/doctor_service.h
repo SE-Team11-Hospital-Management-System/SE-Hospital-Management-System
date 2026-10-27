@@ -29,6 +29,7 @@ public:
     Result<std::vector<Doctor>> list(const Session& s, const std::optional<std::string>& specialization = std::nullopt) const;
 
     std::optional<Doctor> get(const std::string& doctorId) const;
+    std::optional<Doctor> findByUser(const std::string& userId) const;   // the profile linked to a Doctor login
     bool exists(const std::string& doctorId) const { return doctors_.count(doctorId) > 0; }
     size_t count() const { return doctors_.size(); }
     bool isWithinAvailability(const std::string& doctorId, const std::string& slotStart) const;   // slot = "YYYY-MM-DD HH:MM"
@@ -36,10 +37,10 @@ public:
 private:
     Result<void> validateInput(const DoctorInput& in) const;
     Result<void> persist() const;
-    [[maybe_unused]] AuditService& audit_;
+    AuditService& audit_;
     std::string path_;
     IsDoctorUserFn isDoctorUser_;
     std::map<std::string, Doctor> doctors_;
-    [[maybe_unused]] int counter_{0};
+    int counter_{0};
 };
 }  // namespace hms
