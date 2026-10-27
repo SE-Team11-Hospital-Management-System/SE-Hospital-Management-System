@@ -11,6 +11,7 @@ Result<LoadReport> loadAllData(AppContext& ctx) {
     if (auto r = ctx.patients.load(); !r.ok()) return r.error();
     if (auto r = ctx.doctors.load(); !r.ok()) return r.error();
     if (auto r = ctx.appointments.load(); !r.ok()) return r.error();
+    if (auto r = ctx.consultations.load(); !r.ok()) return r.error();
     LoadReport rep;
     rep.patients = ctx.patientRepo.size();
     rep.doctors = ctx.doctors.count();

@@ -1,5 +1,6 @@
 #include "security/session_manager.h"
 #include "security/sha256.h"
+#include <random>
 
 namespace hms {
 
@@ -8,7 +9,10 @@ SessionManager::SessionManager(Clock clock, std::chrono::minutes idleLimit)
 
 Session SessionManager::create(const std::string& userId, Role role, const std::string& doctorId) {
     Session s;
-    s.token = sha256Hex(userId + std::to_string(++counter_) + std::to_string(clock_().time_since_epoch().count()));
+    std::random_device rd;                                         // unguessable token: 128 random bits + counter
+    std::string seed = userId + std::to_string(++counter_);
+    for (int i = 0; i < 4; ++i) seed += std::to_string(rd());
+    s.token = sha256Hex(seed);
     s.userId = userId; s.role = role; s.doctorId = doctorId; s.lastActivity = clock_();
     sessions_[s.token] = s;
     return s;
@@ -24,6 +28,11 @@ Result<Session> SessionManager::validate(const std::string& token) {
     }
     it->second.lastActivity = clock_();
     return it->second;
+}
+
+void SessionManager::attachDoctor(const std::string& token, const std::string& doctorId) {
+    auto it = sessions_.find(token);
+    if (it != sessions_.end()) it->second.doctorId = doctorId;
 }
 
 void SessionManager::end(const std::string& token) { sessions_.erase(token); }

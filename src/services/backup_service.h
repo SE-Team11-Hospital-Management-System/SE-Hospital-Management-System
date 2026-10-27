@@ -16,8 +16,9 @@ public:
     // Copies the chosen backup over the data folder. The caller must reload all data afterwards.
     Result<void> restore(const Session& s, const std::string& backupName, bool confirm);
     const std::string& backupRoot() const { return backupRoot_; }
+    std::string latestBackup() const;                                           // newest folder name, "" if none
 private:
     std::string dataDir_, backupRoot_;
-    [[maybe_unused]] AuditService& audit_;
+    AuditService& audit_;
 };
 }  // namespace hms

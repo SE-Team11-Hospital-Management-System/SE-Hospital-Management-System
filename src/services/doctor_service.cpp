@@ -72,7 +72,7 @@ Result<void> DoctorService::validateInput(const DoctorInput& in) const {
 }
 
 Result<std::string> DoctorService::addDoctor(const Session& s, const DoctorInput& in) {
-    if (!AccessControl::isAllowed(s.role, Operation::ManageDoctors)) { audit_.log(s.userId, "ACCESS_DENIED", "addDoctor", false); return deniedError(); }
+    if (auto ok = AccessControl::authorize(s, Operation::ManageDoctors, "addDoctor"); !ok.ok()) return ok.error();
     if (auto v = validateInput(in); !v.ok()) return v.error();
     for (const auto& [id, d] : doctors_)
         if (d.userId == in.userId) return makeError(ErrorCode::E011, "This Doctor account is already linked to " + id + ".", id);
@@ -85,7 +85,7 @@ Result<std::string> DoctorService::addDoctor(const Session& s, const DoctorInput
 }
 
 Result<void> DoctorService::updateDoctor(const Session& s, const std::string& doctorId, const DoctorInput& c) {
-    if (!AccessControl::isAllowed(s.role, Operation::ManageDoctors)) { audit_.log(s.userId, "ACCESS_DENIED", "updateDoctor", false); return deniedError(); }
+    if (auto ok = AccessControl::authorize(s, Operation::ManageDoctors, "updateDoctor"); !ok.ok()) return ok.error();
     auto it = doctors_.find(doctorId);
     if (it == doctors_.end()) return makeError(ErrorCode::E021, "Doctor not found.");
     const Doctor before = it->second;
@@ -100,7 +100,7 @@ Result<void> DoctorService::updateDoctor(const Session& s, const std::string& do
 }
 
 Result<void> DoctorService::setAvailability(const Session& s, const std::string& doctorId, const std::vector<Window>& ws) {
-    if (!AccessControl::isAllowed(s.role, Operation::ManageDoctors)) { audit_.log(s.userId, "ACCESS_DENIED", "setAvailability", false); return deniedError(); }
+    if (auto ok = AccessControl::authorize(s, Operation::ManageDoctors, "setAvailability"); !ok.ok()) return ok.error();
     auto it = doctors_.find(doctorId);
     if (it == doctors_.end()) return makeError(ErrorCode::E021, "Doctor not found.");
     for (const auto& x : ws) {
@@ -116,10 +116,16 @@ Result<void> DoctorService::setAvailability(const Session& s, const std::string&
 }
 
 Result<std::vector<Doctor>> DoctorService::list(const Session& s, const std::optional<std::string>& spec) const {
-    if (!AccessControl::isAllowed(s.role, Operation::ListDoctors)) { audit_.log(s.userId, "ACCESS_DENIED", "listDoctors", false); return deniedError(); }
+    if (auto ok = AccessControl::authorize(s, Operation::ListDoctors, "listDoctors"); !ok.ok()) return ok.error();
     std::vector<Doctor> out;
     for (const auto& [id, d] : doctors_) if (!spec || d.specialization == *spec) out.push_back(d);
     return out;
+}
+
+std::optional<Doctor> DoctorService::findByUser(const std::string& userId) const {
+    for (const auto& [id, d] : doctors_)
+        if (d.userId == userId) return d;
+    return std::nullopt;
 }
 
 std::optional<Doctor> DoctorService::get(const std::string& doctorId) const {

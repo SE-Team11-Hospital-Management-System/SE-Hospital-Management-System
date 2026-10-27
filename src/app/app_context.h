@@ -6,8 +6,10 @@
 #include "services/appointment_service.h"
 #include "services/auth_service.h"
 #include "services/backup_service.h"
+#include "services/consultation_service.h"
 #include "services/doctor_service.h"
 #include "services/patient_service.h"
+#include "services/report_service.h"
 #include <string>
 
 namespace hms {
@@ -21,8 +23,13 @@ struct AppContext {
     PatientService patients;
     DoctorService doctors;
     AppointmentService appointments;
+    ConsultationService consultations;
+    ReportService reports;
     BackupService backup;
 
-    AppContext(const std::string& dataDirectory, const std::string& backupRoot);
+    AppContext(const std::string& dataDirectory, const std::string& backupRoot, const std::string& reportsDir = "reports");
+    ~AppContext();
+    AppContext(const AppContext&) = delete;
+    AppContext& operator=(const AppContext&) = delete;
 };
 }  // namespace hms
