@@ -1,6 +1,6 @@
-// C6 AppointmentService: booking with slot-conflict detection (HMS-F-030/031).
-// Cancel / reschedule / schedule view / status life-cycle arrive in Sprint 2.
-// Saved to <dataDir>/appointments.dat:  appointmentId|patientId|doctorId|slotStart|bookedBy|status(0..3)
+// C6 AppointmentService: booking with slot-conflict detection, cancel, no-show and the status life-cycle
+// (HMS-F-030, F-031, F-032, F-035). Reschedule and daily schedules follow. Saved to <dataDir>/appointments.dat:
+//   appointmentId|patientId|doctorId|slotStart|bookedBy|status(0=Scheduled,1=Completed,2=Cancelled,3=NoShow)
 #pragma once
 #include "common/types.h"
 #include "data/patient_repository.h"
@@ -34,16 +34,28 @@ public:
     Result<std::vector<Appointment>> forPatient(const Session& s, const std::string& patientId) const;   // ascending time
     std::optional<Appointment> get(const std::string& id) const;
     std::vector<Appointment> all() const;
+
+    // HMS-F-035: Scheduled -> Completed | Cancelled | NoShow are the only allowed changes (E032 otherwise).
+    static bool canChange(AppointmentStatus from, AppointmentStatus to);
+    // Cancelled (before the start time) or NoShow (after the start time). Completed is set only by markCompleted().
+    Result<void> changeStatus(const Session& s, const std::string& id, AppointmentStatus to);
+    Result<void> cancel(const Session& s, const std::string& id) { return changeStatus(s, id, AppointmentStatus::Cancelled); }
+    Result<void> markNoShow(const Session& s, const std::string& id) { return changeStatus(s, id, AppointmentStatus::NoShow); }
+    Result<void> markCompleted(const std::string& id);                     // called by ConsultationService after saving
+
+
 private:
+    std::optional<Error> slotProblem(const std::string& doctorId, const std::string& slot) const;
+    Result<void> setStatus(Appointment& a, AppointmentStatus to);
     bool isSlotFree(const std::string& doctorId, const std::string& slot) const;
     Result<void> persist() const;
-    [[maybe_unused]] PatientRepository& patients_;
-    [[maybe_unused]] DoctorService& doctors_;
-    [[maybe_unused]] AuditService& audit_;
+    PatientRepository& patients_;
+    DoctorService& doctors_;
+    AuditService& audit_;
     std::string path_;
     NowFn now_;
     std::map<std::string, Appointment> appts_;
     std::map<std::string, std::string> taken_;                              // "doctorId|slot" -> appointmentId (fast conflict check)
-    [[maybe_unused]] int counter_{0};
+    int counter_{0};
 };
 }  // namespace hms

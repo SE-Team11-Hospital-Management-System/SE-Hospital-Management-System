@@ -21,7 +21,9 @@ const char* toString(AppointmentStatus s) {
 
 namespace {
 bool blocksSlot(AppointmentStatus s) { return s == AppointmentStatus::Scheduled || s == AppointmentStatus::Completed; }   // HMS-F-031
-}
+std::string key(const std::string& doctorId, const std::string& slot) { return doctorId + "|" + slot; }
+Error notAllowed(AppointmentStatus s) { return makeError(ErrorCode::E032, std::string("Action not allowed for status ") + toString(s) + "."); }
+}  // namespace
 
 AppointmentService::AppointmentService(PatientRepository& patients, DoctorService& doctors, AuditService& audit, std::string dataDir, NowFn now)
     : patients_(patients), doctors_(doctors), audit_(audit), path_(dataDir + "/appointments.dat"), now_(std::move(now)) {}
@@ -36,7 +38,7 @@ Result<void> AppointmentService::load() {
         if (st < 0 || st > 3) return makeError(ErrorCode::E040, "Data file damaged. Restore from backup?", path_);
         Appointment a{f[0], f[1], f[2], f[3], f[4], static_cast<AppointmentStatus>(st)};
         appts_[a.appointmentId] = a;
-        if (blocksSlot(a.status)) taken_[a.doctorId + "|" + a.slotStart] = a.appointmentId;
+        if (blocksSlot(a.status)) taken_[key(a.doctorId, a.slotStart)] = a.appointmentId;
         counter_ = std::max(counter_, std::atoi(a.appointmentId.c_str() + 1));
     }
     return {};
@@ -51,7 +53,7 @@ Result<void> AppointmentService::persist() const {
 }
 
 bool AppointmentService::isSlotFree(const std::string& doctorId, const std::string& slot) const {
-    return taken_.find(doctorId + "|" + slot) == taken_.end();
+    return taken_.find(key(doctorId, slot)) == taken_.end();
 }
 
 std::vector<std::string> AppointmentService::nextFreeSlots(const std::string& doctorId, const std::string& from, int n) const {
@@ -66,32 +68,75 @@ std::vector<std::string> AppointmentService::nextFreeSlots(const std::string& do
     return out;
 }
 
+// Why a slot cannot be booked for this doctor, with the next 3 free slots in details (HMS-F-031).
+std::optional<Error> AppointmentService::slotProblem(const std::string& doctorId, const std::string& slot) const {
+    if (!doctors_.exists(doctorId)) return makeError(ErrorCode::E021, "Doctor not found.");
+    if (!dt::isValid(slot) || !dt::onHalfHour(slot)) return makeError(ErrorCode::E010, "Slot: YYYY-MM-DD HH:MM on a 30-minute boundary.");
+    std::string alt;
+    for (const auto& x : nextFreeSlots(doctorId, std::max(slot, now_()), 3)) alt += (alt.empty() ? "" : ", ") + x;
+    if (slot <= now_()) return makeError(ErrorCode::E031, "Slot is in the past. Next free slots: " + alt, alt);
+    if (!doctors_.isWithinAvailability(doctorId, slot)) return makeError(ErrorCode::E031, "Slot is outside the doctor's availability. Next free slots: " + alt, alt);
+    if (!isSlotFree(doctorId, slot)) return makeError(ErrorCode::E030, "Slot taken. Next free slots: " + alt, alt);
+    return std::nullopt;
+}
+
 Result<std::string> AppointmentService::book(const Session& s, const std::string& patientId, const std::string& doctorId, const std::string& slotStart) {
-    if (!AccessControl::isAllowed(s.role, Operation::BookAppointment)) { audit_.log(s.userId, "ACCESS_DENIED", "book", false); return deniedError(); }
+    if (auto ok = AccessControl::authorize(s, Operation::BookAppointment, "book"); !ok.ok()) return ok.error();
     auto p = patients_.findById(patientId);
     if (!p) return makeError(ErrorCode::E020, "Patient not found.");
     if (!p->active) return makeError(ErrorCode::E025, "Patient record is inactive.");
-    if (!doctors_.exists(doctorId)) return makeError(ErrorCode::E021, "Doctor not found.");
-    if (!dt::isValid(slotStart) || !dt::onHalfHour(slotStart)) return makeError(ErrorCode::E010, "Slot: YYYY-MM-DD HH:MM on a 30-minute boundary.");
-    auto alternatives = [&] {
-        std::string alt;
-        for (const auto& x : nextFreeSlots(doctorId, std::max(slotStart, now_()), 3)) alt += (alt.empty() ? "" : ", ") + x;
-        return alt;
-    };
-    if (slotStart <= now_()) { auto a = alternatives(); return makeError(ErrorCode::E031, "Slot is in the past. Next free slots: " + a, a); }
-    if (!doctors_.isWithinAvailability(doctorId, slotStart)) { auto a = alternatives(); return makeError(ErrorCode::E031, "Slot is outside the doctor's availability. Next free slots: " + a, a); }
-    if (!isSlotFree(doctorId, slotStart)) { auto a = alternatives(); return makeError(ErrorCode::E030, "Slot taken. Next free slots: " + a, a); }
+    if (auto problem = slotProblem(doctorId, slotStart)) return *problem;
     char id[16]; std::snprintf(id, sizeof id, "A%08d", counter_ + 1);
     appts_[id] = Appointment{id, patientId, doctorId, slotStart, s.userId, AppointmentStatus::Scheduled};
-    taken_[doctorId + "|" + slotStart] = id;
-    if (auto w = persist(); !w.ok()) { appts_.erase(id); taken_.erase(doctorId + "|" + slotStart); return w.error(); }
+    taken_[key(doctorId, slotStart)] = id;
+    if (auto w = persist(); !w.ok()) { appts_.erase(id); taken_.erase(key(doctorId, slotStart)); return w.error(); }
     ++counter_;
     audit_.log(s.userId, "APPT_BOOKED", id, true);
     return std::string(id);
 }
 
+bool AppointmentService::canChange(AppointmentStatus from, AppointmentStatus to) {
+    return from == AppointmentStatus::Scheduled && to != AppointmentStatus::Scheduled;
+}
+
+// Applies an allowed status change in memory and on disk; undoes it if the save fails.
+Result<void> AppointmentService::setStatus(Appointment& a, AppointmentStatus to) {
+    const AppointmentStatus before = a.status;
+    a.status = to;
+    if (!blocksSlot(to)) taken_.erase(key(a.doctorId, a.slotStart));   // a cancelled slot is free again at once (HMS-F-032)
+    if (auto w = persist(); !w.ok()) {
+        a.status = before;
+        if (blocksSlot(before)) taken_[key(a.doctorId, a.slotStart)] = a.appointmentId;
+        return w.error();
+    }
+    return {};
+}
+
+Result<void> AppointmentService::changeStatus(const Session& s, const std::string& id, AppointmentStatus to) {
+    if (auto ok = AccessControl::authorize(s, Operation::BookAppointment, "changeStatus"); !ok.ok()) return ok.error();
+    auto it = appts_.find(id);
+    if (it == appts_.end()) return makeError(ErrorCode::E022, "Appointment not found.");
+    Appointment& a = it->second;
+    if (!canChange(a.status, to) || to == AppointmentStatus::Completed) return notAllowed(a.status);
+    const bool started = a.slotStart <= now_();
+    if (to == AppointmentStatus::Cancelled && started)
+        return makeError(ErrorCode::E032, "Action not allowed: the appointment has already started.");
+    if (to == AppointmentStatus::NoShow && !started)
+        return makeError(ErrorCode::E032, "Action not allowed: No-Show only after the start time.");
+    if (auto w = setStatus(a, to); !w.ok()) return w.error();
+    audit_.log(s.userId, to == AppointmentStatus::Cancelled ? "APPT_CANCELLED" : "APPT_NO_SHOW", id, true);
+    return {};
+}
+
+Result<void> AppointmentService::markCompleted(const std::string& id) {
+    auto it = appts_.find(id);
+    if (it == appts_.end()) return makeError(ErrorCode::E022, "Appointment not found.");
+    if (!canChange(it->second.status, AppointmentStatus::Completed)) return notAllowed(it->second.status);
+    return setStatus(it->second, AppointmentStatus::Completed);
+}
+
 Result<std::vector<Appointment>> AppointmentService::forPatient(const Session& s, const std::string& patientId) const {
-    if (!AccessControl::isAllowed(s.role, Operation::BookAppointment)) return deniedError();
+    if (auto ok = AccessControl::authorize(s, Operation::BookAppointment, "listAppointments"); !ok.ok()) return ok.error();
     if (!patients_.findById(patientId)) return makeError(ErrorCode::E020, "Patient not found.");
     std::vector<Appointment> out;
     for (const auto& [id, a] : appts_) if (a.patientId == patientId) out.push_back(a);
