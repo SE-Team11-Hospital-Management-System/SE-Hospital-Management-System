@@ -1,4 +1,4 @@
-# TASK-04: build and test every push and every pull request (Part-2 deliverable 2b).
+# TASK-04: build and test the C++ program and the website on every push and every pull request.
 name: CI
 
 on:
@@ -54,3 +54,26 @@ jobs:
         run: cmake --build build -j 4
       - name: Run tests
         run: ctest --test-dir build --output-on-failure
+
+  website:
+    # HMS-F-070..074: the website must type-check, pass its page tests and build
+    name: Website (type check, tests, build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Install packages
+        run: npm ci
+      - name: Type check (TypeScript strict)
+        run: npm run typecheck
+      - name: Page tests (Vitest)
+        run: npm test
+      - name: Production build
+        run: npm run build

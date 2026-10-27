@@ -6,7 +6,12 @@
 # runtime data created when you run hms (never commit real data)
 /data/
 /backup/
+/reports/
 *.tmp
+# website build output and packages
+/web/node_modules/
+/web/dist/
+/web/*.tsbuildinfo
 # editors / OS
 .vscode/
 .idea/
