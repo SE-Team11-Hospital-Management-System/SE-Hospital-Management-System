@@ -33,4 +33,13 @@ std::vector<AuditEntry> AuditService::readAll() const {
     }
     return v;
 }
+
+std::vector<AuditEntry> AuditService::query(const std::string& fromDate, const std::string& toDate, const std::string& userId) const {
+    std::vector<AuditEntry> out;
+    for (auto& e : readAll()) {
+        const std::string day = e.timestamp.substr(0, 10);
+        if (day >= fromDate && day <= toDate && (userId.empty() || e.userId == userId)) out.push_back(std::move(e));
+    }
+    return out;
+}
 }  // namespace hms
