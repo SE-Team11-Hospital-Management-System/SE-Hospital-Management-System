@@ -1,4 +1,4 @@
-# TASK-04: build and test the C++ program and the website on every push and every pull request.
+# TASK-04 / HMS-NF-007: build and test every push and every pull request on Linux (two compiler versions) and Windows.
 name: CI
 
 on:
@@ -12,6 +12,21 @@ jobs:
   linux:
     name: Build + unit tests (Linux, g++)
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+      - name: Build
+        run: cmake --build build -j 4
+      - name: Run tests
+        run: ctest --test-dir build --output-on-failure
+
+  ubuntu-22-04:
+    # HMS-NF-007: the same source builds and passes the tests with g++ 11 on Ubuntu 22.04
+    name: Build + unit tests (Ubuntu 22.04, g++ 11)
+    runs-on: ubuntu-22.04
+    env:
+      CXX: g++-11
     steps:
       - uses: actions/checkout@v4
       - name: Configure
