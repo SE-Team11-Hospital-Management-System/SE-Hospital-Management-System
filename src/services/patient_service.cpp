@@ -24,7 +24,7 @@ Result<void> PatientService::validate(const PatientInput& in, const std::string&
 }
 
 Result<std::string> PatientService::registerPatient(const Session& s, const PatientInput& in, bool confirmDuplicate) {
-    if (!AccessControl::isAllowed(s.role, Operation::RegisterPatient)) { audit_.log(s.userId, "ACCESS_DENIED", "registerPatient", false); return deniedError(); }
+    if (auto ok = AccessControl::authorize(s, Operation::RegisterPatient, "registerPatient"); !ok.ok()) return ok.error();
     if (auto v = validate(in, today_()); !v.ok()) return v.error();
     std::string existing;
     if (!confirmDuplicate && repo_.existsDuplicate(in.fullName, in.dob, in.phone, &existing))
@@ -37,7 +37,7 @@ Result<std::string> PatientService::registerPatient(const Session& s, const Pati
 }
 
 Result<PatientPage> PatientService::search(const Session& s, SearchKey key, const std::string& term, int page) const {
-    if (!AccessControl::isAllowed(s.role, Operation::SearchPatient)) { audit_.log(s.userId, "ACCESS_DENIED", "searchPatient", false); return deniedError(); }
+    if (auto ok = AccessControl::authorize(s, Operation::SearchPatient, "searchPatient"); !ok.ok()) return ok.error();
     if (!Validator::isValidText(term, 60)) return makeError(ErrorCode::E010, "Search term: 1-60 characters.");
     if (page < 1) return makeError(ErrorCode::E010, "Page: must be 1 or more.");
     std::vector<Patient> all;
@@ -52,7 +52,7 @@ Result<PatientPage> PatientService::search(const Session& s, SearchKey key, cons
 }
 
 Result<void> PatientService::updatePatient(const Session& s, const std::string& id, const PatientInput& c) {
-    if (!AccessControl::isAllowed(s.role, Operation::UpdatePatient)) { audit_.log(s.userId, "ACCESS_DENIED", "updatePatient", false); return deniedError(); }
+    if (auto ok = AccessControl::authorize(s, Operation::UpdatePatient, "updatePatient"); !ok.ok()) return ok.error();
     auto cur = repo_.findById(id);
     if (!cur) return makeError(ErrorCode::E020, "Patient not found.");
     const Patient before = *cur;
@@ -69,6 +69,18 @@ Result<void> PatientService::updatePatient(const Session& s, const std::string& 
     repo_.put(*cur);
     if (auto w = repo_.persist(path_); !w.ok()) { repo_.put(before); return w.error(); }
     audit_.log(s.userId, "PATIENT_UPDATE", id + ":" + changed, true);
+    return {};
+}
+Result<void> PatientService::deactivatePatient(const Session& s, const std::string& id) {
+    if (auto ok = AccessControl::authorize(s, Operation::DeactivatePatient, "deactivatePatient"); !ok.ok()) return ok.error();
+    auto cur = repo_.findById(id);
+    if (!cur) return makeError(ErrorCode::E020, "Patient not found.");
+    if (!cur->active) return makeError(ErrorCode::E032, "Action not allowed: patient is already inactive.");
+    Patient changed = *cur;
+    changed.active = false;
+    repo_.put(changed);
+    if (auto w = repo_.persist(path_); !w.ok()) { repo_.put(*cur); return w.error(); }
+    audit_.log(s.userId, "PATIENT_DEACTIVATE", id, true);
     return {};
 }
 }  // namespace hms
