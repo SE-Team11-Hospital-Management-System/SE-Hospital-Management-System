@@ -1,4 +1,5 @@
 #include "data/file_store.h"
+#include "security/sha256.h"
 #include <filesystem>
 #include <fstream>
 
@@ -13,6 +14,12 @@ void ownerOnly(const fs::path& p, bool dir) {                    // HMS-SEC-006:
                     fs::perm_options::replace, ec);              // on Windows the user-profile ACL already limits access
 }
 }  // namespace
+
+std::string FileStore::checksumLine(const std::vector<std::string>& lines) {
+    std::string all;
+    for (const auto& l : lines) { all += l; all += '\n'; }
+    return "#SHA256=" + sha256Hex(all);
+}
 
 bool FileStore::exists(const std::string& path) { std::error_code ec; return fs::exists(path, ec); }
 
@@ -32,6 +39,7 @@ Result<void> FileStore::atomicWrite(const std::string& path, const std::vector<s
         if (!out) return writeFailedError();                         // HMS-NF-011: nothing changed
         ownerOnly(tmp, false);
         for (const auto& l : lines) out << l << '\n';
+        out << checksumLine(lines) << '\n';                          // HMS-SEC-007
         out.flush();
         if (!out) { out.close(); fs::remove(tmp, ec); return writeFailedError(); }
     }
@@ -52,6 +60,11 @@ Result<std::vector<std::string>> FileStore::load(const std::string& path) {
         if (!line.empty() && line.back() == '\r') line.pop_back();
         if (!line.empty()) lines.push_back(line);
     }
+    if (lines.empty() || lines.back().rfind("#SHA256=", 0) != 0)            // HMS-SEC-007: no checksum = not trusted
+        return makeError(ErrorCode::E040, "Data file damaged. Restore from backup?", path);
+    const std::string stored = lines.back();
+    lines.pop_back();
+    if (stored != checksumLine(lines)) return makeError(ErrorCode::E040, "Data file damaged. Restore from backup?", path);
     return lines;
 }
 }  // namespace hms
