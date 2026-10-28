@@ -118,11 +118,37 @@ Result<std::string> ConsultationService::record(const Session& s, const std::str
     return std::string(id);
 }
 
-Result<std::vector<Consultation>> ConsultationService::history(const Session&, const std::string&) { return notImplementedError(); }
+Result<std::vector<Consultation>> ConsultationService::history(const Session& s, const std::string& patientId) {
+    if (auto ok = AccessControl::authorize(s, Operation::ViewMedicalHistory, "consultationHistory"); !ok.ok()) return ok.error();
+    if (!patients_.findById(patientId)) return makeError(ErrorCode::E020, "Patient not found.");
+    std::vector<Consultation> out;
+    for (const auto& [id, c] : byId_) if (c.patientId == patientId) out.push_back(c);
+    std::sort(out.begin(), out.end(), [](const Consultation& x, const Consultation& y) {
+        return x.createdAt != y.createdAt ? x.createdAt > y.createdAt : x.consultId > y.consultId; });   // newest first
+    audit_.log(s.userId, "CONSULT_VIEW", patientId, true);
+    return out;
+}
 
-Result<void> ConsultationService::addAddendum(const Session&, const std::string&, const std::string&) { return notImplementedError(); }
+Result<void> ConsultationService::addAddendum(const Session& s, const std::string& consultId, const std::string& text) {
+    if (auto ok = AccessControl::authorize(s, Operation::RecordConsultation, "addAddendum"); !ok.ok()) return ok.error();
+    auto it = byId_.find(consultId);
+    if (it == byId_.end()) return makeError(ErrorCode::E024, "Consultation not found.");
+    if (!Validator::isValidText(text, kMaxDiagnosis)) return makeError(ErrorCode::E010, "Addendum: 1-500 characters.");
+    it->second.addenda.push_back(Addendum{now_(), s.userId, text});
+    if (auto w = persist(); !w.ok()) { it->second.addenda.pop_back(); (void)persist(); return w.error(); }
+    audit_.log(s.userId, "CONSULT_ADDENDUM", consultId, true);
+    return {};
+}
 
-Result<void> ConsultationService::editConsultation(const Session&, const std::string&, const ConsultationInput&) { return notImplementedError(); }
+Result<void> ConsultationService::editConsultation(const Session& s, const std::string& consultId, const ConsultationInput&) {
+    if (auto ok = AccessControl::authorize(s, Operation::RecordConsultation, "editConsultation"); !ok.ok()) return ok.error();
+    audit_.log(s.userId, "CONSULT_EDIT_REFUSED", consultId, false);
+    return makeError(ErrorCode::E032, "Saved consultations cannot be edited. Add an addendum instead.");
+}
 
-Result<void> ConsultationService::deleteConsultation(const Session&, const std::string&) { return notImplementedError(); }
+Result<void> ConsultationService::deleteConsultation(const Session& s, const std::string& consultId) {
+    if (auto ok = AccessControl::authorize(s, Operation::RecordConsultation, "deleteConsultation"); !ok.ok()) return ok.error();
+    audit_.log(s.userId, "CONSULT_DELETE_REFUSED", consultId, false);
+    return makeError(ErrorCode::E032, "Saved consultations cannot be deleted.");
+}
 }  // namespace hms
