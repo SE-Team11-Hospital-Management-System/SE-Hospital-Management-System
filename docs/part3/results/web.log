@@ -1,0 +1,28 @@
+$ ['/opt/hostedtoolcache/node/20.20.2/x64/bin/npm', 'ci', '--no-audit', '--no-fund']
+
+added 210 packages in 3s
+npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+
+$ ['/opt/hostedtoolcache/node/20.20.2/x64/bin/npm', 'install', '--no-save', '--no-audit', '--no-fund', '@vitest/coverage-v8@2.1.8']
+
+added 51 packages in 3s
+npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+
+$ ['/opt/hostedtoolcache/node/20.20.2/x64/bin/npx', 'vitest', 'run', '--coverage.enabled=true', '--coverage.provider=v8', '--coverage.reporter=json-summary', '--coverage.reporter=html', '--coverage.reportsDirectory=/tmp/hms-webcov-r204gdvt', '--coverage.include=src/**', '--coverage.exclude=src/test/**', '--reporter=default', '--reporter=junit', '--outputFile.junit=/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/docs/part3/results/web-junit.xml']
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.8 [39m[90m/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web[39m
+      [2mCoverage enabled with [22m[33mv8[39m
+
+ [32m✓[39m src/test/pages.test.tsx [2m([22m[2m15 tests[22m[2m)[22m[33m 695[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m15 passed[39m[22m[90m (15)[39m
+[2m   Start at [22m 06:32:41
+[2m   Duration [22m 2.15s[2m (transform 182ms, setup 14ms, collect 798ms, tests 695ms, environment 270ms, prepare 46ms)[22m
+
+JUNIT report written to /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/docs/part3/results/web-junit.xml
+[90mstderr[2m | src/test/pages.test.tsx[2m > [22m[2mevery page opens[2m > [22m[2m/ shows heading /^Welcome, tester$/ for Receptionist
+[22m[39m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+

@@ -1,0 +1,6 @@
+$ ['gcovr', '-r', '.', '--filter', 'src/', '--exclude', 'src/main.cpp', '--gcov-ignore-parse-errors=suspicious_hits.warn_once_per_file', '--exclude-throw-branches', '--exclude-unreachable-branches', '--json-summary-pretty', '--json-summary', '/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/docs/part3/results/cpp-coverage.json', '--html-details', '/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/docs/part3/coverage/cpp/index.html', '--html-title', 'HMS C++ coverage', '/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports']
+(WARNING) Ignoring suspicious hits in /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/src/security/sha256.cpp:17: 5363193024:   17:inline uint32_t rotr(uint32_t x, int n) { return (x >> n) | (x << (32 - n)); }.
+::warning::(WARNING) Ignoring suspicious hits in /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/src/security/sha256.cpp:17: 5363193024:   17:inline uint32_t rotr(uint32_t x, int n) { return (x >> n) | (x << (32 - n)); }.
+(WARNING) Ignored 2 suspicious hits overall.
+::warning::(WARNING) Ignored 2 suspicious hits overall.
+
