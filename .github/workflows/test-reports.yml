@@ -1,0 +1,44 @@
+# Part-3 test reports: runs every C++ and website test once with coverage counters and writes the
+# Unit Test, System Validation, Code Coverage and Branch Coverage reports (tools/make_test_reports.py).
+# Runs when a branch named docs-part3-* is pushed, or by hand from the Actions tab.
+# The reports are uploaded as the artifact "test-reports"; `python sprint.py pr 2` downloads them into docs/part3/.
+name: Test reports
+
+on:
+  push:
+    branches: ['docs-part3-*']
+    paths-ignore: ['docs/part3/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  reports:
+    name: Unit, system validation, code and branch coverage reports
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Install tools
+        run: pipx install gcovr==8.8 || python3 -m pip install --user --break-system-packages gcovr==8.8
+      - name: Which main commit is tested
+        run: echo "BASE_SHA=$(git merge-base HEAD origin/main)" >> "$GITHUB_ENV"
+      - name: Run all tests and write the reports
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/make_test_reports.py --out docs/part3
+      - name: Upload the reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: docs/part3
+          if-no-files-found: error
