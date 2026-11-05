@@ -1,0 +1,94 @@
+$ ['cmake', '-S', '.', '-B', '/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports', '-DCMAKE_BUILD_TYPE=Debug', '-DHMS_COVERAGE=ON', '-G', 'Ninja']
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Using the multi-header code from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/json-src/include/
+-- The C compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Found Python3: /usr/bin/python3.12 (found version "3.12.3") found components: Interpreter
+-- Configuring done (2.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports
+
+$ ['cmake', '--build', '/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports', '-j', '4']
+[0/2] Re-checking globbed directories...
+[1/70] Building CXX object CMakeFiles/hms_core.dir/src/api/routes_appointments.cpp.o
+[2/70] Building CXX object CMakeFiles/hms_core.dir/src/api/routes_auth.cpp.o
+[3/70] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[4/70] Building CXX object CMakeFiles/hms_core.dir/src/api/routes_backup.cpp.o
+[5/70] Building CXX object CMakeFiles/hms_core.dir/src/api/routes_clinical.cpp.o
+[6/70] Building CXX object CMakeFiles/hms_core.dir/src/api/routes_doctors.cpp.o
+[7/70] Building CXX object CMakeFiles/hms_core.dir/src/api/routes_patients.cpp.o
+[8/70] Building CXX object CMakeFiles/hms_core.dir/src/api/routes_recovery.cpp.o
+[9/70] Building CXX object CMakeFiles/hms_core.dir/src/app/app_context.cpp.o
+[10/70] Building CXX object CMakeFiles/hms_core.dir/src/app/bootstrap.cpp.o
+[11/70] Building CXX object CMakeFiles/hms_core.dir/src/api/routes_status.cpp.o
+[12/70] Building CXX object CMakeFiles/hms_core.dir/src/api/routes_reports.cpp.o
+[13/70] Building CXX object CMakeFiles/hms_core.dir/src/app/recovery.cpp.o
+[14/70] Building CXX object CMakeFiles/hms_core.dir/src/data/file_store.cpp.o
+[15/70] Building CXX object CMakeFiles/hms_core.dir/src/security/access_control.cpp.o
+[16/70] Building CXX object CMakeFiles/hms_core.dir/src/data/patient_repository.cpp.o
+[17/70] Building CXX object CMakeFiles/hms_core.dir/src/api/api.cpp.o
+[18/70] Building CXX object CMakeFiles/hms_core.dir/src/security/audit_service.cpp.o
+[19/70] Building CXX object CMakeFiles/hms_core.dir/src/security/password_hasher.cpp.o
+[20/70] Building CXX object CMakeFiles/hms_core.dir/src/security/sha256.cpp.o
+[21/70] Building CXX object CMakeFiles/hms_core.dir/src/security/validator.cpp.o
+[22/70] Building CXX object CMakeFiles/hms_core.dir/src/security/session_manager.cpp.o
+[23/70] Building CXX object CMakeFiles/hms_core.dir/src/services/auth_service.cpp.o
+[24/70] Building CXX object CMakeFiles/hms_core.dir/src/services/backup_service.cpp.o
+[25/70] Building CXX object CMakeFiles/hms_core.dir/src/services/appointment_service.cpp.o
+[26/70] Building CXX object CMakeFiles/hms_core.dir/src/services/patient_service.cpp.o
+[27/70] Building CXX object CMakeFiles/hms_core.dir/src/services/consultation_service.cpp.o
+[28/70] Building CXX object CMakeFiles/hms_core.dir/src/services/doctor_service.cpp.o
+[29/70] Linking CXX static library lib/libgtest.a
+[30/70] Building CXX object CMakeFiles/hms_core.dir/src/services/report_service.cpp.o
+[31/70] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[32/70] Linking CXX static library libhms_core.a
+[33/70] Building CXX object _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+[34/70] Building CXX object CMakeFiles/hms.dir/src/main.cpp.o
+[35/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_access.cpp.o
+[36/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_api_auth.cpp.o
+[37/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_api_clinical.cpp.o
+[38/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_api_appointments.cpp.o
+[39/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_api_foundation.cpp.o
+[40/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_api_security.cpp.o
+[41/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_api_patients.cpp.o
+[42/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_api_recovery.cpp.o
+[43/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_api_reports.cpp.o
+[44/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_appointment.cpp.o
+[45/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_auth.cpp.o
+[46/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_audit_access.cpp.o
+[47/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_backup.cpp.o
+[48/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_consultation.cpp.o
+[49/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_data.cpp.o
+[50/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_doctor.cpp.o
+[51/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_filestore.cpp.o
+[52/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_history.cpp.o
+[53/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_integrity.cpp.o
+[54/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_patient.cpp.o
+[55/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_patient_deactivate.cpp.o
+[56/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_perf_appointments.cpp.o
+[57/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_perf_search.cpp.o
+[58/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_reschedule_schedule.cpp.o
+[59/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_reports.cpp.o
+[60/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_security.cpp.o
+[61/70] Linking CXX static library lib/libgmock.a
+[62/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_session_password.cpp.o
+[63/70] Linking CXX static library lib/libgtest_main.a
+[64/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_smoke.cpp.o
+[65/70] Linking CXX executable hms
+[66/70] Building CXX object CMakeFiles/hms_tests.dir/tests/test_status.cpp.o
+[67/70] Building CXX object _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+[68/70] Linking CXX static library lib/libgmock_main.a
+[69/70] Linking CXX executable hms_tests
+

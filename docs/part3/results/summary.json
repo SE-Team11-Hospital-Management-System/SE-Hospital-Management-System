@@ -1,0 +1,8 @@
+{
+ "tests": 84,
+ "passed": 84,
+ "unit": "84 of 84 tests passed",
+ "sys": "55 of 55 requirements verified",
+ "code": "C++ lines 96.9%, service layer 97.2%",
+ "branch": "C++ branches 69.3%"
+}

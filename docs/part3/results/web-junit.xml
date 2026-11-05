@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="15" failures="0" errors="0" time="2.15">
+    <testsuite name="src/test/pages.test.tsx" timestamp="2026-11-05T06:32:43.633Z" hostname="runnervm48cm3" tests="15" failures="0" errors="0" skipped="0" time="0.694863595">
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; / shows heading /^Welcome, tester$/ for Receptionist" time="0.123104662">
+            <system-err>
+⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; / shows heading /^Welcome, tester$/ for Doctor" time="0.0473593">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /patients shows heading /^Patients$/ for Receptionist" time="0.053342109">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /doctors shows heading /^Doctors$/ for Administrator" time="0.047456285">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /appointments shows heading /^Appointments$/ for Receptionist" time="0.04238483">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /schedule shows heading /schedule/i for Receptionist" time="0.054119102">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /schedule shows heading /schedule/i for Doctor" time="0.030407814">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /consultations shows heading /^Consultations$/ for Doctor" time="0.044985009">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /reports shows heading /^Reports$/ for Administrator" time="0.033021845">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /users shows heading /^User accounts$/ for Administrator" time="0.035845688">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /audit shows heading /^Audit log$/ for Administrator" time="0.041665984">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /backups shows heading /^Backup and restore$/ for Administrator" time="0.03041156">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /password shows heading /^Change my password$/ for Doctor" time="0.02865376">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; a Receptionist has no Consultations or Audit log page in the menu (HMS-F-003, F-042)" time="0.039052114">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; a page the role may not use sends the user back to the dashboard" time="0.041832072">
+        </testcase>
+    </testsuite>
+</testsuites>
