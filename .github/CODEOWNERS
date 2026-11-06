@@ -1,39 +1,71 @@
 # Buddy review: GitHub automatically asks the right person to review each PR.
 #   Paras  <-> Shristi      Saurav <-> Pranav
-# The last matching line wins.
+# The last matching line wins. Updated in Part-3: the console files of Sprint 1 were replaced by the website.
 
 *                                   @ParasAgarwal23 @PranavdaSupreme1
 
-# SF-1 Login, roles, user accounts (author: Paras) -> reviewed by Shristi
+# SF-1 Login, roles, user accounts, audit log (author: Paras) -> reviewed by Shristi
 /src/security/                      @shristiglitter0820
 /src/services/auth_service.*        @shristiglitter0820
-/src/ui/app_shell.cpp               @shristiglitter0820
+/src/api/routes_auth.cpp            @shristiglitter0820
+/web/src/auth.tsx                   @shristiglitter0820
+/web/src/pages/UsersPage.tsx        @shristiglitter0820
+/web/src/pages/AuditPage.tsx        @shristiglitter0820
+/web/src/pages/PasswordPage.tsx     @shristiglitter0820
 /tests/test_security.cpp            @shristiglitter0820
 /tests/test_auth.cpp                @shristiglitter0820
+/tests/test_access.cpp              @shristiglitter0820
+/tests/test_audit_access.cpp        @shristiglitter0820
+/tests/test_session_password.cpp    @shristiglitter0820
+/tests/test_api_auth.cpp            @shristiglitter0820
+/tests/test_api_security.cpp        @shristiglitter0820
+/tests/test_sf1_paths.cpp           @shristiglitter0820
+/web/src/test/security_pages.test.tsx @shristiglitter0820
 
-# SF-2 Patients + skeleton (author: Saurav) -> reviewed by Pranav
+# SF-2 Patients, website foundation, data integrity (author: Saurav) -> reviewed by Pranav
 /CMakeLists.txt                     @PranavdaSupreme1
 /src/common/                        @PranavdaSupreme1
 /src/security/validator.*           @PranavdaSupreme1
 /src/data/patient_repository.*      @PranavdaSupreme1
 /src/services/patient_service.*     @PranavdaSupreme1
-/src/ui/patient_menu.cpp            @PranavdaSupreme1
+/src/api/api.*                      @PranavdaSupreme1
+/src/api/routes_status.cpp          @PranavdaSupreme1
+/src/api/routes_patients.cpp        @PranavdaSupreme1
+/src/api/routes_recovery.cpp        @PranavdaSupreme1
+/src/app/recovery.*                 @PranavdaSupreme1
+/web/src/pages/LoginPage.tsx        @PranavdaSupreme1
+/web/src/pages/PatientsPage.tsx     @PranavdaSupreme1
+/web/src/pages/RecoveryPage.tsx     @PranavdaSupreme1
 /tests/test_patient.cpp             @PranavdaSupreme1
+/tests/test_integrity.cpp           @PranavdaSupreme1
+/web/src/test/patient_pages.test.tsx @PranavdaSupreme1
 
-# SF-3 Doctors and appointments (author: Pranav) -> reviewed by Saurav
+# SF-3 Doctors, appointments, schedules (author: Pranav) -> reviewed by Saurav
 /src/services/doctor_service.*      @SauravS9
 /src/services/appointment_service.* @SauravS9
-/src/ui/doctor_menu.cpp             @SauravS9
-/src/ui/appointment_menu.cpp        @SauravS9
+/src/api/routes_doctors.cpp         @SauravS9
+/src/api/routes_appointments.cpp    @SauravS9
+/web/src/pages/DoctorsPage.tsx      @SauravS9
+/web/src/pages/AppointmentsPage.tsx @SauravS9
+/web/src/pages/SchedulePage.tsx     @SauravS9
 /tests/test_doctor.cpp              @SauravS9
 /tests/test_appointment.cpp         @SauravS9
+/web/src/test/appointment_pages.test.tsx @SauravS9
 
-# SF-4 Data storage, backup, CI (author: Shristi) -> reviewed by Paras
+# SF-4 Data storage, backup, consultations, reports, CI (author: Shristi) -> reviewed by Paras
 /.github/workflows/                 @ParasAgarwal23
 /src/data/file_store.*              @ParasAgarwal23
 /src/app/bootstrap.*                @ParasAgarwal23
 /src/services/backup_service.*      @ParasAgarwal23
-/src/ui/backup_menu.cpp             @ParasAgarwal23
+/src/services/consultation_service.* @ParasAgarwal23
+/src/services/report_service.*      @ParasAgarwal23
+/src/api/routes_clinical.cpp        @ParasAgarwal23
+/src/api/routes_reports.cpp         @ParasAgarwal23
+/src/api/routes_backup.cpp          @ParasAgarwal23
+/web/src/pages/ConsultationsPage.tsx @ParasAgarwal23
+/web/src/pages/ReportsPage.tsx      @ParasAgarwal23
+/web/src/pages/BackupPage.tsx       @ParasAgarwal23
 /tests/test_filestore.cpp           @ParasAgarwal23
 /tests/test_data.cpp                @ParasAgarwal23
 /tests/test_backup.cpp              @ParasAgarwal23
+/web/src/test/clinical_pages.test.tsx @ParasAgarwal23

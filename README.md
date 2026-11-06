@@ -32,10 +32,13 @@ A C++17 program holds all data and rules; staff use it through a website (React 
 ## Documents (`docs/`)
 - `HMS_SRS.docx` — Software Requirements Specification (v1.1)
 - `SAD.docx` — Software Architecture and Design Specification (v1.1)
-- `HMS_Test_Plan.docx` — Software Test Plan with test cases (v1.1)
+- `HMS_Test_Plan.docx` — Software Test Plan with test cases (v1.2: test cases updated after the sprints, section 16)
 - `SETUP.md` — how to install the tools
 - `USER_GUIDE.md` — how to use HMS
-- `sprint1/`, `sprint2/` — test reports, usability results, deviations, demo videos
+- `DEVIATIONS.md` — **final list of every difference from the SRS, SAD and Test Plan**, with reason and status
+- `sprint1/`, `sprint2/` — test reports, usability results, deviations found in each sprint, demo videos
+- `part3/` — final test reports: Unit Test Report, System Validation Report, Code Coverage Report, Branch Coverage Report
+  (start at `docs/part3/README.md`)
 
 ## Build and run
 ```bash
@@ -52,6 +55,19 @@ Tests: `ctest --test-dir build --output-on-failure` (C++ and web API) and `cd we
 - C++ build and tests on Ubuntu (g++ 13 and g++ 11) and Windows (MSYS2 g++); all tests under AddressSanitizer + LeakSanitizer
 - Website: TypeScript strict type check, page tests, production build
 - No function longer than 50 lines (`tools/check_function_length.py`), cppcheck, service-layer line coverage of at least 70%
+
+## Test reports (Part-3)
+The *Test reports* workflow (`.github/workflows/test-reports.yml`, also startable from the Actions tab) builds HMS with coverage,
+runs every C++ and website test and writes the four reports into `docs/part3/` (`tools/make_test_reports.py`).
+The latest results are on the first page of `docs/part3/README.md`.
+
+## Project timeline
+| Phase | Dates | Outcome |
+|---|---|---|
+| Part-1: SRS, SAD, Test Plan | to 6 Oct 2026 | IEEE documents in `docs/` |
+| Part-2: backlog, Sprint 1 | 19–23 Oct 2026 | console version, 1-minute video `docs/sprint1/sprint1-demo.mp4` |
+| Sprint 2 | 26–30 Oct 2026 | website version, development frozen, 2-minute video `docs/sprint2/sprint2-demo.mp4` |
+| Part-3: testing | 2–6 Nov 2026 | Test Plan v1.2, final test reports in `docs/part3/`, no Sprint-3 needed |
 
 ## How we work
 Every change goes through its own branch and a pull request (PR) raised by the member the backlog item is assigned to.
