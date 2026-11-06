@@ -1,40 +1,134 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="15" failures="0" errors="0" time="2.15">
-    <testsuite name="src/test/pages.test.tsx" timestamp="2026-11-05T06:32:43.633Z" hostname="runnervm48cm3" tests="15" failures="0" errors="0" skipped="0" time="0.694863595">
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; / shows heading /^Welcome, tester$/ for Receptionist" time="0.123104662">
+<testsuites name="vitest tests" tests="43" failures="0" errors="0" time="12.139">
+    <testsuite name="src/test/appointment_pages.test.tsx" timestamp="2026-11-06T17:28:48.212Z" hostname="runnervm7aw5e" tests="5" failures="0" errors="0" skipped="0" time="5.614481036">
+        <testcase classname="src/test/appointment_pages.test.tsx" name="doctors page (TC-DOC-01, TC-WEB-04) &gt; filters by specialization; Administrator adds a doctor linked to a Doctor account" time="1.006237999">
             <system-err>
 ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
 ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
 
             </system-err>
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; / shows heading /^Welcome, tester$/ for Doctor" time="0.0473593">
+        <testcase classname="src/test/appointment_pages.test.tsx" name="doctors page (TC-DOC-01, TC-WEB-04) &gt; working hours: one block per ticked weekday; a refused change shows the rule (E010)" time="2.066923694">
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /patients shows heading /^Patients$/ for Receptionist" time="0.053342109">
+        <testcase classname="src/test/appointment_pages.test.tsx" name="doctors page (TC-DOC-01, TC-WEB-04) &gt; a Receptionist sees the list but no Add, Edit or Hours buttons" time="0.153435816">
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /doctors shows heading /^Doctors$/ for Administrator" time="0.047456285">
+        <testcase classname="src/test/appointment_pages.test.tsx" name="appointments page (TC-APT-01..06, TC-WEB-04) &gt; book: unknown patient is E020; a taken slot offers 3 free slots and one click books it" time="0.765216118">
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /appointments shows heading /^Appointments$/ for Receptionist" time="0.04238483">
+        <testcase classname="src/test/appointment_pages.test.tsx" name="appointments page (TC-APT-01..06, TC-WEB-04) &gt; manage: cancel and no-show ask first; a refused change shows E032; reschedule moves it" time="1.620372447">
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /schedule shows heading /schedule/i for Receptionist" time="0.054119102">
+    </testsuite>
+    <testsuite name="src/test/clinical_pages.test.tsx" timestamp="2026-11-06T17:28:48.214Z" hostname="runnervm7aw5e" tests="6" failures="0" errors="0" skipped="0" time="2.578451937">
+        <testcase classname="src/test/clinical_pages.test.tsx" name="consultations page (TC-CON-01..03, TC-WEB-05) &gt; the patient is shown before saving (HMS-NF-010); No — discard saves nothing" time="0.615767686">
+            <system-err>
+⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+            </system-err>
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /schedule shows heading /schedule/i for Doctor" time="0.030407814">
+        <testcase classname="src/test/clinical_pages.test.tsx" name="consultations page (TC-CON-01..03, TC-WEB-05) &gt; Yes — save sends the diagnosis and prescription, confirmed" time="0.434011573">
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /consultations shows heading /^Consultations$/ for Doctor" time="0.044985009">
+        <testcase classname="src/test/clinical_pages.test.tsx" name="consultations page (TC-CON-01..03, TC-WEB-05) &gt; a refused save returns to the form with the rule (E010); history shows prescriptions and addenda; addendum is added" time="0.718209125">
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /reports shows heading /^Reports$/ for Administrator" time="0.033021845">
+        <testcase classname="src/test/clinical_pages.test.tsx" name="reports and backups (TC-RPT-01, TC-RPT-02, TC-DATA-02, TC-WEB-05) &gt; daily report shows totals and each doctor; CSV download uses the login token" time="0.197217644">
+            <system-err>
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+    at navigateFetch (/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web/node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+    at exports.navigate (/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web/node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+    at Timeout._onTimeout (/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web/node_modules/jsdom/lib/jsdom/living/nodes/HTMLHyperlinkElementUtils-impl.js:81:7)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) [90mundefined[39m
+
+            </system-err>
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /users shows heading /^User accounts$/ for Administrator" time="0.035845688">
+        <testcase classname="src/test/clinical_pages.test.tsx" name="reports and backups (TC-RPT-01, TC-RPT-02, TC-DATA-02, TC-WEB-05) &gt; workload for the Administrator; a reversed range is refused" time="0.282014229">
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /audit shows heading /^Audit log$/ for Administrator" time="0.041665984">
+        <testcase classname="src/test/clinical_pages.test.tsx" name="reports and backups (TC-RPT-01, TC-RPT-02, TC-DATA-02, TC-WEB-05) &gt; backups: create one, restore only after Yes (with confirm: true)" time="0.32926227">
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /backups shows heading /^Backup and restore$/ for Administrator" time="0.03041156">
+    </testsuite>
+    <testsuite name="src/test/pages.test.tsx" timestamp="2026-11-06T17:28:48.216Z" hostname="runnervm7aw5e" tests="15" failures="0" errors="0" skipped="0" time="1.481020356">
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; / shows heading /^Welcome, tester$/ for Receptionist" time="0.251498256">
+            <system-err>
+⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+            </system-err>
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /password shows heading /^Change my password$/ for Doctor" time="0.02865376">
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; / shows heading /^Welcome, tester$/ for Doctor" time="0.086970582">
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; a Receptionist has no Consultations or Audit log page in the menu (HMS-F-003, F-042)" time="0.039052114">
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /patients shows heading /^Patients$/ for Receptionist" time="0.154285124">
         </testcase>
-        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; a page the role may not use sends the user back to the dashboard" time="0.041832072">
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /doctors shows heading /^Doctors$/ for Administrator" time="0.107618603">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /appointments shows heading /^Appointments$/ for Receptionist" time="0.093532185">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /schedule shows heading /schedule/i for Receptionist" time="0.116595411">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /schedule shows heading /schedule/i for Doctor" time="0.06061364">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /consultations shows heading /^Consultations$/ for Doctor" time="0.092796842">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /reports shows heading /^Reports$/ for Administrator" time="0.057365145">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /users shows heading /^User accounts$/ for Administrator" time="0.102875988">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /audit shows heading /^Audit log$/ for Administrator" time="0.08077379">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /backups shows heading /^Backup and restore$/ for Administrator" time="0.04828478">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; /password shows heading /^Change my password$/ for Doctor" time="0.068561628">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; a Receptionist has no Consultations or Audit log page in the menu (HMS-F-003, F-042)" time="0.076671196">
+        </testcase>
+        <testcase classname="src/test/pages.test.tsx" name="every page opens &gt; a page the role may not use sends the user back to the dashboard" time="0.080699132">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/test/patient_pages.test.tsx" timestamp="2026-11-06T17:28:48.219Z" hostname="runnervm7aw5e" tests="7" failures="0" errors="0" skipped="0" time="4.583658378">
+        <testcase classname="src/test/patient_pages.test.tsx" name="patients page (TC-PAT-01..06, TC-WEB-03) &gt; search shows results with paging; an empty search sends nothing" time="0.853994278">
+            <system-err>
+⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/test/patient_pages.test.tsx" name="patients page (TC-PAT-01..06, TC-WEB-03) &gt; register: a duplicate asks first (HMS-F-015); No saves nothing, Yes registers a second record" time="1.373287568">
+        </testcase>
+        <testcase classname="src/test/patient_pages.test.tsx" name="patients page (TC-PAT-01..06, TC-WEB-03) &gt; register shows the field rule from the server (E010); edit keeps ID, date of birth and gender" time="1.39478627">
+        </testcase>
+        <testcase classname="src/test/patient_pages.test.tsx" name="patients page (TC-PAT-01..06, TC-WEB-03) &gt; only the Administrator deactivates, after confirming; the record stays and shows Inactive (HMS-F-014)" time="0.419632295">
+        </testcase>
+        <testcase classname="src/test/patient_pages.test.tsx" name="patients page (TC-PAT-01..06, TC-WEB-03) &gt; a Receptionist sees no Deactivate button; a Doctor can only search" time="0.260283125">
+        </testcase>
+        <testcase classname="src/test/patient_pages.test.tsx" name="damaged data file (TC-SEC-06) &gt; only an Administrator restores the latest backup, then the login comes back" time="0.202773085">
+        </testcase>
+        <testcase classname="src/test/patient_pages.test.tsx" name="damaged data file (TC-SEC-06) &gt; cannot restore when there is no backup" time="0.076744725">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/test/security_pages.test.tsx" timestamp="2026-11-06T17:28:48.220Z" hostname="runnervm7aw5e" tests="10" failures="0" errors="0" skipped="0" time="3.527595224">
+        <testcase classname="src/test/security_pages.test.tsx" name="login page (TC-AUTH-01, TC-AUTH-02, TC-WEB-01) &gt; shows the generic E001 message, clears the password, then logs in" time="0.541652242">
+            <system-err>
+⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/test/security_pages.test.tsx" name="login page (TC-AUTH-01, TC-AUTH-02, TC-WEB-01) &gt; shows the lock-out message with the minutes left (E002)" time="0.189892739">
+        </testcase>
+        <testcase classname="src/test/security_pages.test.tsx" name="login page (TC-AUTH-01, TC-AUTH-02, TC-WEB-01) &gt; first run: the two passwords must match, then the Administrator is created" time="0.311574486">
+        </testcase>
+        <testcase classname="src/test/security_pages.test.tsx" name="login page (TC-AUTH-01, TC-AUTH-02, TC-WEB-01) &gt; says so when the HMS server cannot be reached (E099)" time="0.059655251">
+        </testcase>
+        <testcase classname="src/test/security_pages.test.tsx" name="pages of a logged-in Administrator (TC-AUTH-04, TC-AUTH-05, TC-SEC-03, TC-WEB-02) &gt; user accounts: create (duplicate refused), deactivate and reactivate; no button for my own account" time="1.080406763">
+        </testcase>
+        <testcase classname="src/test/security_pages.test.tsx" name="pages of a logged-in Administrator (TC-AUTH-04, TC-AUTH-05, TC-SEC-03, TC-WEB-02) &gt; audit log: shows names, filters by date range and reports a bad range (E010)" time="0.402655239">
+        </testcase>
+        <testcase classname="src/test/security_pages.test.tsx" name="pages of a logged-in Administrator (TC-AUTH-04, TC-AUTH-05, TC-SEC-03, TC-WEB-02) &gt; change my password: repeat must match, server rule is shown, success clears the form" time="0.367132894">
+        </testcase>
+        <testcase classname="src/test/security_pages.test.tsx" name="pages of a logged-in Administrator (TC-AUTH-04, TC-AUTH-05, TC-SEC-03, TC-WEB-02) &gt; an expired session (E003 from the server) goes back to the login page" time="0.202751042">
+        </testcase>
+        <testcase classname="src/test/security_pages.test.tsx" name="pages of a logged-in Administrator (TC-AUTH-04, TC-AUTH-05, TC-SEC-03, TC-WEB-02) &gt; logs out by itself after 10 minutes without activity (TC-SEC-04)" time="0.359029532">
+        </testcase>
+        <testcase classname="src/test/security_pages.test.tsx" name="api helper &gt; turns server errors into ApiError with the HMS code and downloads files with the token" time="0.010495012">
         </testcase>
     </testsuite>
 </testsuites>

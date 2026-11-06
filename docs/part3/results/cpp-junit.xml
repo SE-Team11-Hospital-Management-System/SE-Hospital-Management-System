@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="(empty)"
-	tests="69"
+	tests="76"
 	failures="0"
 	disabled="0"
 	skipped="0"
 	hostname=""
-	time="20"
-	timestamp="2026-11-05T06:32:09"
+	time="35"
+	timestamp="2026-11-06T17:27:43"
 	>
-	<testcase name="AccessCheck.DeniedRoleIsE004AndAuditLogged" classname="AccessCheck.DeniedRoleIsE004AndAuditLogged" time="0.0228016" status="run">
+	<testcase name="AccessCheck.DeniedRoleIsE004AndAuditLogged" classname="AccessCheck.DeniedRoleIsE004AndAuditLogged" time="0.0323864" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = AccessCheck.DeniedRoleIsE004AndAuditLogged
@@ -16,15 +16,15 @@ Note: Google Test filter = AccessCheck.DeniedRoleIsE004AndAuditLogged
 [----------] Global test environment set-up.
 [----------] 1 test from AccessCheck
 [ RUN      ] AccessCheck.DeniedRoleIsE004AndAuditLogged
-[       OK ] AccessCheck.DeniedRoleIsE004AndAuditLogged (1 ms)
-[----------] 1 test from AccessCheck (1 ms total)
+[       OK ] AccessCheck.DeniedRoleIsE004AndAuditLogged (0 ms)
+[----------] 1 test from AccessCheck (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (1 ms total)
+[==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="AccessCheck.UnknownOrEndedSessionIsE003" classname="AccessCheck.UnknownOrEndedSessionIsE003" time="0.0208943" status="run">
+	<testcase name="AccessCheck.UnknownOrEndedSessionIsE003" classname="AccessCheck.UnknownOrEndedSessionIsE003" time="0.0306688" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = AccessCheck.UnknownOrEndedSessionIsE003
@@ -40,7 +40,7 @@ Note: Google Test filter = AccessCheck.UnknownOrEndedSessionIsE003
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="AccessCheck.AppContextAttachesItself" classname="AccessCheck.AppContextAttachesItself" time="0.276235" status="run">
+	<testcase name="AccessCheck.AppContextAttachesItself" classname="AccessCheck.AppContextAttachesItself" time="0.458295" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = AccessCheck.AppContextAttachesItself
@@ -48,15 +48,15 @@ Note: Google Test filter = AccessCheck.AppContextAttachesItself
 [----------] Global test environment set-up.
 [----------] 1 test from AccessCheck
 [ RUN      ] AccessCheck.AppContextAttachesItself
-[       OK ] AccessCheck.AppContextAttachesItself (255 ms)
-[----------] 1 test from AccessCheck (255 ms total)
+[       OK ] AccessCheck.AppContextAttachesItself (427 ms)
+[----------] 1 test from AccessCheck (427 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (255 ms total)
+[==========] 1 test from 1 test suite ran. (427 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebApi.DoctorsAppointmentsAndSchedule" classname="WebApi.DoctorsAppointmentsAndSchedule" time="0.441812" status="run">
+	<testcase name="WebApi.DoctorsAppointmentsAndSchedule" classname="WebApi.DoctorsAppointmentsAndSchedule" time="0.684053" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebApi.DoctorsAppointmentsAndSchedule
@@ -64,15 +64,15 @@ Note: Google Test filter = WebApi.DoctorsAppointmentsAndSchedule
 [----------] Global test environment set-up.
 [----------] 1 test from WebApi
 [ RUN      ] WebApi.DoctorsAppointmentsAndSchedule
-[       OK ] WebApi.DoctorsAppointmentsAndSchedule (409 ms)
-[----------] 1 test from WebApi (409 ms total)
+[       OK ] WebApi.DoctorsAppointmentsAndSchedule (649 ms)
+[----------] 1 test from WebApi (649 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (409 ms total)
+[==========] 1 test from 1 test suite ran. (649 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebApi.PasswordUsersAndAudit" classname="WebApi.PasswordUsersAndAudit" time="0.533228" status="run">
+	<testcase name="WebApi.PasswordUsersAndAudit" classname="WebApi.PasswordUsersAndAudit" time="0.851445" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebApi.PasswordUsersAndAudit
@@ -80,15 +80,15 @@ Note: Google Test filter = WebApi.PasswordUsersAndAudit
 [----------] Global test environment set-up.
 [----------] 1 test from WebApi
 [ RUN      ] WebApi.PasswordUsersAndAudit
-[       OK ] WebApi.PasswordUsersAndAudit (500 ms)
-[----------] 1 test from WebApi (500 ms total)
+[       OK ] WebApi.PasswordUsersAndAudit (816 ms)
+[----------] 1 test from WebApi (816 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (500 ms total)
+[==========] 1 test from 1 test suite ran. (816 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebApi.ConsultationsNeedConfirmationAndStayPrivate" classname="WebApi.ConsultationsNeedConfirmationAndStayPrivate" time="0.381456" status="run">
+	<testcase name="WebApi.ConsultationsNeedConfirmationAndStayPrivate" classname="WebApi.ConsultationsNeedConfirmationAndStayPrivate" time="0.629216" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebApi.ConsultationsNeedConfirmationAndStayPrivate
@@ -96,15 +96,15 @@ Note: Google Test filter = WebApi.ConsultationsNeedConfirmationAndStayPrivate
 [----------] Global test environment set-up.
 [----------] 1 test from WebApi
 [ RUN      ] WebApi.ConsultationsNeedConfirmationAndStayPrivate
-[       OK ] WebApi.ConsultationsNeedConfirmationAndStayPrivate (348 ms)
-[----------] 1 test from WebApi (348 ms total)
+[       OK ] WebApi.ConsultationsNeedConfirmationAndStayPrivate (594 ms)
+[----------] 1 test from WebApi (594 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (348 ms total)
+[==========] 1 test from 1 test suite ran. (594 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebApi.StatusLoginAndSession" classname="WebApi.StatusLoginAndSession" time="0.398393" status="run">
+	<testcase name="WebApi.StatusLoginAndSession" classname="WebApi.StatusLoginAndSession" time="0.572029" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebApi.StatusLoginAndSession
@@ -112,15 +112,15 @@ Note: Google Test filter = WebApi.StatusLoginAndSession
 [----------] Global test environment set-up.
 [----------] 1 test from WebApi
 [ RUN      ] WebApi.StatusLoginAndSession
-[       OK ] WebApi.StatusLoginAndSession (364 ms)
-[----------] 1 test from WebApi (364 ms total)
+[       OK ] WebApi.StatusLoginAndSession (537 ms)
+[----------] 1 test from WebApi (537 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (364 ms total)
+[==========] 1 test from 1 test suite ran. (537 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebApi.DoctorLoginCarriesOwnProfile" classname="WebApi.DoctorLoginCarriesOwnProfile" time="0.320898" status="run">
+	<testcase name="WebApi.DoctorLoginCarriesOwnProfile" classname="WebApi.DoctorLoginCarriesOwnProfile" time="0.518022" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebApi.DoctorLoginCarriesOwnProfile
@@ -128,15 +128,15 @@ Note: Google Test filter = WebApi.DoctorLoginCarriesOwnProfile
 [----------] Global test environment set-up.
 [----------] 1 test from WebApi
 [ RUN      ] WebApi.DoctorLoginCarriesOwnProfile
-[       OK ] WebApi.DoctorLoginCarriesOwnProfile (281 ms)
-[----------] 1 test from WebApi (281 ms total)
+[       OK ] WebApi.DoctorLoginCarriesOwnProfile (483 ms)
+[----------] 1 test from WebApi (483 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (281 ms total)
+[==========] 1 test from 1 test suite ran. (483 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebApi.FirstRunSetupOnlyOnce" classname="WebApi.FirstRunSetupOnlyOnce" time="0.321876" status="run">
+	<testcase name="WebApi.FirstRunSetupOnlyOnce" classname="WebApi.FirstRunSetupOnlyOnce" time="0.465484" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebApi.FirstRunSetupOnlyOnce
@@ -144,15 +144,15 @@ Note: Google Test filter = WebApi.FirstRunSetupOnlyOnce
 [----------] Global test environment set-up.
 [----------] 1 test from WebApi
 [ RUN      ] WebApi.FirstRunSetupOnlyOnce
-[       OK ] WebApi.FirstRunSetupOnlyOnce (280 ms)
-[----------] 1 test from WebApi (280 ms total)
+[       OK ] WebApi.FirstRunSetupOnlyOnce (429 ms)
+[----------] 1 test from WebApi (429 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (280 ms total)
+[==========] 1 test from 1 test suite ran. (429 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebApi.BadJsonIsE010" classname="WebApi.BadJsonIsE010" time="0.287492" status="run">
+	<testcase name="WebApi.BadJsonIsE010" classname="WebApi.BadJsonIsE010" time="0.463477" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebApi.BadJsonIsE010
@@ -160,15 +160,15 @@ Note: Google Test filter = WebApi.BadJsonIsE010
 [----------] Global test environment set-up.
 [----------] 1 test from WebApi
 [ RUN      ] WebApi.BadJsonIsE010
-[       OK ] WebApi.BadJsonIsE010 (254 ms)
-[----------] 1 test from WebApi (254 ms total)
+[       OK ] WebApi.BadJsonIsE010 (428 ms)
+[----------] 1 test from WebApi (428 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (254 ms total)
+[==========] 1 test from 1 test suite ran. (428 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebApi.ServesTheWebsiteAndFallsBackToIndex" classname="WebApi.ServesTheWebsiteAndFallsBackToIndex" time="0.292288" status="run">
+	<testcase name="WebApi.ServesTheWebsiteAndFallsBackToIndex" classname="WebApi.ServesTheWebsiteAndFallsBackToIndex" time="0.46734" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebApi.ServesTheWebsiteAndFallsBackToIndex
@@ -176,15 +176,15 @@ Note: Google Test filter = WebApi.ServesTheWebsiteAndFallsBackToIndex
 [----------] Global test environment set-up.
 [----------] 1 test from WebApi
 [ RUN      ] WebApi.ServesTheWebsiteAndFallsBackToIndex
-[       OK ] WebApi.ServesTheWebsiteAndFallsBackToIndex (259 ms)
-[----------] 1 test from WebApi (259 ms total)
+[       OK ] WebApi.ServesTheWebsiteAndFallsBackToIndex (432 ms)
+[----------] 1 test from WebApi (432 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (259 ms total)
+[==========] 1 test from 1 test suite ran. (432 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebApi.RefusesRequestsFromOtherSites" classname="WebApi.RefusesRequestsFromOtherSites" time="0.316621" status="run">
+	<testcase name="WebApi.RefusesRequestsFromOtherSites" classname="WebApi.RefusesRequestsFromOtherSites" time="0.518408" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebApi.RefusesRequestsFromOtherSites
@@ -192,15 +192,15 @@ Note: Google Test filter = WebApi.RefusesRequestsFromOtherSites
 [----------] Global test environment set-up.
 [----------] 1 test from WebApi
 [ RUN      ] WebApi.RefusesRequestsFromOtherSites
-[       OK ] WebApi.RefusesRequestsFromOtherSites (283 ms)
-[----------] 1 test from WebApi (283 ms total)
+[       OK ] WebApi.RefusesRequestsFromOtherSites (483 ms)
+[----------] 1 test from WebApi (483 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (283 ms total)
+[==========] 1 test from 1 test suite ran. (483 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebApi.PatientsRegisterSearchUpdateDeactivate" classname="WebApi.PatientsRegisterSearchUpdateDeactivate" time="0.386881" status="run">
+	<testcase name="WebApi.PatientsRegisterSearchUpdateDeactivate" classname="WebApi.PatientsRegisterSearchUpdateDeactivate" time="0.634235" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebApi.PatientsRegisterSearchUpdateDeactivate
@@ -208,15 +208,15 @@ Note: Google Test filter = WebApi.PatientsRegisterSearchUpdateDeactivate
 [----------] Global test environment set-up.
 [----------] 1 test from WebApi
 [ RUN      ] WebApi.PatientsRegisterSearchUpdateDeactivate
-[       OK ] WebApi.PatientsRegisterSearchUpdateDeactivate (353 ms)
-[----------] 1 test from WebApi (353 ms total)
+[       OK ] WebApi.PatientsRegisterSearchUpdateDeactivate (599 ms)
+[----------] 1 test from WebApi (599 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (353 ms total)
+[==========] 1 test from 1 test suite ran. (599 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebApi.TC_SEC_06_RecoveryModeAndRestore" classname="WebApi.TC_SEC_06_RecoveryModeAndRestore" time="0.389046" status="run">
+	<testcase name="WebApi.TC_SEC_06_RecoveryModeAndRestore" classname="WebApi.TC_SEC_06_RecoveryModeAndRestore" time="0.628259" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebApi.TC_SEC_06_RecoveryModeAndRestore
@@ -224,15 +224,15 @@ Note: Google Test filter = WebApi.TC_SEC_06_RecoveryModeAndRestore
 [----------] Global test environment set-up.
 [----------] 1 test from WebApi
 [ RUN      ] WebApi.TC_SEC_06_RecoveryModeAndRestore
-[       OK ] WebApi.TC_SEC_06_RecoveryModeAndRestore (355 ms)
-[----------] 1 test from WebApi (355 ms total)
+[       OK ] WebApi.TC_SEC_06_RecoveryModeAndRestore (593 ms)
+[----------] 1 test from WebApi (593 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (355 ms total)
+[==========] 1 test from 1 test suite ran. (593 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebApi.ReportsCsvAndBackups" classname="WebApi.ReportsCsvAndBackups" time="0.400543" status="run">
+	<testcase name="WebApi.ReportsCsvAndBackups" classname="WebApi.ReportsCsvAndBackups" time="0.639751" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebApi.ReportsCsvAndBackups
@@ -240,15 +240,15 @@ Note: Google Test filter = WebApi.ReportsCsvAndBackups
 [----------] Global test environment set-up.
 [----------] 1 test from WebApi
 [ RUN      ] WebApi.ReportsCsvAndBackups
-[       OK ] WebApi.ReportsCsvAndBackups (366 ms)
-[----------] 1 test from WebApi (366 ms total)
+[       OK ] WebApi.ReportsCsvAndBackups (604 ms)
+[----------] 1 test from WebApi (604 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (366 ms total)
+[==========] 1 test from 1 test suite ran. (604 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebSecurity.TC_SEC_07_TokensAreRandomAndChecked" classname="WebSecurity.TC_SEC_07_TokensAreRandomAndChecked" time="0.468085" status="run">
+	<testcase name="WebSecurity.TC_SEC_07_TokensAreRandomAndChecked" classname="WebSecurity.TC_SEC_07_TokensAreRandomAndChecked" time="0.732828" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebSecurity.TC_SEC_07_TokensAreRandomAndChecked
@@ -256,15 +256,15 @@ Note: Google Test filter = WebSecurity.TC_SEC_07_TokensAreRandomAndChecked
 [----------] Global test environment set-up.
 [----------] 1 test from WebSecurity
 [ RUN      ] WebSecurity.TC_SEC_07_TokensAreRandomAndChecked
-[       OK ] WebSecurity.TC_SEC_07_TokensAreRandomAndChecked (434 ms)
-[----------] 1 test from WebSecurity (434 ms total)
+[       OK ] WebSecurity.TC_SEC_07_TokensAreRandomAndChecked (697 ms)
+[----------] 1 test from WebSecurity (697 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (434 ms total)
+[==========] 1 test from 1 test suite ran. (697 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebSecurity.TC_SEC_07_ServerListensOnLoopbackOnly" classname="WebSecurity.TC_SEC_07_ServerListensOnLoopbackOnly" time="0.286021" status="run">
+	<testcase name="WebSecurity.TC_SEC_07_ServerListensOnLoopbackOnly" classname="WebSecurity.TC_SEC_07_ServerListensOnLoopbackOnly" time="0.465695" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebSecurity.TC_SEC_07_ServerListensOnLoopbackOnly
@@ -272,15 +272,15 @@ Note: Google Test filter = WebSecurity.TC_SEC_07_ServerListensOnLoopbackOnly
 [----------] Global test environment set-up.
 [----------] 1 test from WebSecurity
 [ RUN      ] WebSecurity.TC_SEC_07_ServerListensOnLoopbackOnly
-[       OK ] WebSecurity.TC_SEC_07_ServerListensOnLoopbackOnly (251 ms)
-[----------] 1 test from WebSecurity (251 ms total)
+[       OK ] WebSecurity.TC_SEC_07_ServerListensOnLoopbackOnly (430 ms)
+[----------] 1 test from WebSecurity (430 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (252 ms total)
+[==========] 1 test from 1 test suite ran. (430 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="WebSecurity.PasswordsNeverReturned" classname="WebSecurity.PasswordsNeverReturned" time="0.327934" status="run">
+	<testcase name="WebSecurity.PasswordsNeverReturned" classname="WebSecurity.PasswordsNeverReturned" time="0.51869" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = WebSecurity.PasswordsNeverReturned
@@ -288,15 +288,15 @@ Note: Google Test filter = WebSecurity.PasswordsNeverReturned
 [----------] Global test environment set-up.
 [----------] 1 test from WebSecurity
 [ RUN      ] WebSecurity.PasswordsNeverReturned
-[       OK ] WebSecurity.PasswordsNeverReturned (293 ms)
-[----------] 1 test from WebSecurity (293 ms total)
+[       OK ] WebSecurity.PasswordsNeverReturned (483 ms)
+[----------] 1 test from WebSecurity (483 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (294 ms total)
+[==========] 1 test from 1 test suite ran. (483 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="AppointmentFixture.TC_APT_01_BookValidSlot" classname="AppointmentFixture.TC_APT_01_BookValidSlot" time="0.0268542" status="run">
+	<testcase name="AppointmentFixture.TC_APT_01_BookValidSlot" classname="AppointmentFixture.TC_APT_01_BookValidSlot" time="0.0350706" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = AppointmentFixture.TC_APT_01_BookValidSlot
@@ -304,15 +304,15 @@ Note: Google Test filter = AppointmentFixture.TC_APT_01_BookValidSlot
 [----------] Global test environment set-up.
 [----------] 1 test from AppointmentFixture
 [ RUN      ] AppointmentFixture.TC_APT_01_BookValidSlot
-[       OK ] AppointmentFixture.TC_APT_01_BookValidSlot (4 ms)
-[----------] 1 test from AppointmentFixture (4 ms total)
+[       OK ] AppointmentFixture.TC_APT_01_BookValidSlot (0 ms)
+[----------] 1 test from AppointmentFixture (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (4 ms total)
+[==========] 1 test from 1 test suite ran. (1 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="AppointmentFixture.TC_APT_02_ConflictsAndAlternatives" classname="AppointmentFixture.TC_APT_02_ConflictsAndAlternatives" time="0.0271621" status="run">
+	<testcase name="AppointmentFixture.TC_APT_02_ConflictsAndAlternatives" classname="AppointmentFixture.TC_APT_02_ConflictsAndAlternatives" time="0.0401896" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = AppointmentFixture.TC_APT_02_ConflictsAndAlternatives
@@ -320,15 +320,15 @@ Note: Google Test filter = AppointmentFixture.TC_APT_02_ConflictsAndAlternatives
 [----------] Global test environment set-up.
 [----------] 1 test from AppointmentFixture
 [ RUN      ] AppointmentFixture.TC_APT_02_ConflictsAndAlternatives
-[       OK ] AppointmentFixture.TC_APT_02_ConflictsAndAlternatives (5 ms)
-[----------] 1 test from AppointmentFixture (5 ms total)
+[       OK ] AppointmentFixture.TC_APT_02_ConflictsAndAlternatives (6 ms)
+[----------] 1 test from AppointmentFixture (6 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (5 ms total)
+[==========] 1 test from 1 test suite ran. (6 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="RoleEnforcement.TC_AUTH_03_EveryServiceDeniesForbiddenRoles" classname="RoleEnforcement.TC_AUTH_03_EveryServiceDeniesForbiddenRoles" time="0.274601" status="run">
+	<testcase name="RoleEnforcement.TC_AUTH_03_EveryServiceDeniesForbiddenRoles" classname="RoleEnforcement.TC_AUTH_03_EveryServiceDeniesForbiddenRoles" time="0.460254" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = RoleEnforcement.TC_AUTH_03_EveryServiceDeniesForbiddenRoles
@@ -336,15 +336,15 @@ Note: Google Test filter = RoleEnforcement.TC_AUTH_03_EveryServiceDeniesForbidde
 [----------] Global test environment set-up.
 [----------] 1 test from RoleEnforcement
 [ RUN      ] RoleEnforcement.TC_AUTH_03_EveryServiceDeniesForbiddenRoles
-[       OK ] RoleEnforcement.TC_AUTH_03_EveryServiceDeniesForbiddenRoles (251 ms)
-[----------] 1 test from RoleEnforcement (251 ms total)
+[       OK ] RoleEnforcement.TC_AUTH_03_EveryServiceDeniesForbiddenRoles (426 ms)
+[----------] 1 test from RoleEnforcement (426 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (251 ms total)
+[==========] 1 test from 1 test suite ran. (426 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="RoleEnforcement.TC_AUTH_03_MenuMatrix" classname="RoleEnforcement.TC_AUTH_03_MenuMatrix" time="0.0225429" status="run">
+	<testcase name="RoleEnforcement.TC_AUTH_03_MenuMatrix" classname="RoleEnforcement.TC_AUTH_03_MenuMatrix" time="0.0342282" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = RoleEnforcement.TC_AUTH_03_MenuMatrix
@@ -360,7 +360,7 @@ Note: Google Test filter = RoleEnforcement.TC_AUTH_03_MenuMatrix
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="AuditCompleteness.TC_SEC_03_EntriesAndContent" classname="AuditCompleteness.TC_SEC_03_EntriesAndContent" time="0.340705" status="run">
+	<testcase name="AuditCompleteness.TC_SEC_03_EntriesAndContent" classname="AuditCompleteness.TC_SEC_03_EntriesAndContent" time="0.522371" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = AuditCompleteness.TC_SEC_03_EntriesAndContent
@@ -368,15 +368,15 @@ Note: Google Test filter = AuditCompleteness.TC_SEC_03_EntriesAndContent
 [----------] Global test environment set-up.
 [----------] 1 test from AuditCompleteness
 [ RUN      ] AuditCompleteness.TC_SEC_03_EntriesAndContent
-[       OK ] AuditCompleteness.TC_SEC_03_EntriesAndContent (318 ms)
-[----------] 1 test from AuditCompleteness (318 ms total)
+[       OK ] AuditCompleteness.TC_SEC_03_EntriesAndContent (488 ms)
+[----------] 1 test from AuditCompleteness (488 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (318 ms total)
+[==========] 1 test from 1 test suite ran. (488 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="AuditCompleteness.LockoutLogged" classname="AuditCompleteness.LockoutLogged" time="0.382513" status="run">
+	<testcase name="AuditCompleteness.LockoutLogged" classname="AuditCompleteness.LockoutLogged" time="0.621155" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = AuditCompleteness.LockoutLogged
@@ -384,15 +384,15 @@ Note: Google Test filter = AuditCompleteness.LockoutLogged
 [----------] Global test environment set-up.
 [----------] 1 test from AuditCompleteness
 [ RUN      ] AuditCompleteness.LockoutLogged
-[       OK ] AuditCompleteness.LockoutLogged (360 ms)
-[----------] 1 test from AuditCompleteness (360 ms total)
+[       OK ] AuditCompleteness.LockoutLogged (586 ms)
+[----------] 1 test from AuditCompleteness (586 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (360 ms total)
+[==========] 1 test from 1 test suite ran. (586 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="AuthFixture.TC_AUTH_01_ValidLogin" classname="AuthFixture.TC_AUTH_01_ValidLogin" time="0.153747" status="run">
+	<testcase name="AuthFixture.TC_AUTH_01_ValidLogin" classname="AuthFixture.TC_AUTH_01_ValidLogin" time="0.248015" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = AuthFixture.TC_AUTH_01_ValidLogin
@@ -400,15 +400,15 @@ Note: Google Test filter = AuthFixture.TC_AUTH_01_ValidLogin
 [----------] Global test environment set-up.
 [----------] 1 test from AuthFixture
 [ RUN      ] AuthFixture.TC_AUTH_01_ValidLogin
-[       OK ] AuthFixture.TC_AUTH_01_ValidLogin (130 ms)
-[----------] 1 test from AuthFixture (130 ms total)
+[       OK ] AuthFixture.TC_AUTH_01_ValidLogin (212 ms)
+[----------] 1 test from AuthFixture (212 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (130 ms total)
+[==========] 1 test from 1 test suite ran. (212 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="AuthFixture.TC_AUTH_02_LockoutAndGenericError" classname="AuthFixture.TC_AUTH_02_LockoutAndGenericError" time="0.24441" status="run">
+	<testcase name="AuthFixture.TC_AUTH_02_LockoutAndGenericError" classname="AuthFixture.TC_AUTH_02_LockoutAndGenericError" time="0.405957" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = AuthFixture.TC_AUTH_02_LockoutAndGenericError
@@ -416,15 +416,15 @@ Note: Google Test filter = AuthFixture.TC_AUTH_02_LockoutAndGenericError
 [----------] Global test environment set-up.
 [----------] 1 test from AuthFixture
 [ RUN      ] AuthFixture.TC_AUTH_02_LockoutAndGenericError
-[       OK ] AuthFixture.TC_AUTH_02_LockoutAndGenericError (221 ms)
-[----------] 1 test from AuthFixture (221 ms total)
+[       OK ] AuthFixture.TC_AUTH_02_LockoutAndGenericError (371 ms)
+[----------] 1 test from AuthFixture (371 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (221 ms total)
+[==========] 1 test from 1 test suite ran. (371 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="AuthFixture.TC_AUTH_04_UserManagement" classname="AuthFixture.TC_AUTH_04_UserManagement" time="0.394685" status="run">
+	<testcase name="AuthFixture.TC_AUTH_04_UserManagement" classname="AuthFixture.TC_AUTH_04_UserManagement" time="0.353598" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = AuthFixture.TC_AUTH_04_UserManagement
@@ -432,15 +432,15 @@ Note: Google Test filter = AuthFixture.TC_AUTH_04_UserManagement
 [----------] Global test environment set-up.
 [----------] 1 test from AuthFixture
 [ RUN      ] AuthFixture.TC_AUTH_04_UserManagement
-[       OK ] AuthFixture.TC_AUTH_04_UserManagement (372 ms)
-[----------] 1 test from AuthFixture (372 ms total)
+[       OK ] AuthFixture.TC_AUTH_04_UserManagement (318 ms)
+[----------] 1 test from AuthFixture (318 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (372 ms total)
+[==========] 1 test from 1 test suite ran. (318 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="AuthFixture.TC_SEC_01_PasswordsStoredOnlyAsSaltedHash" classname="AuthFixture.TC_SEC_01_PasswordsStoredOnlyAsSaltedHash" time="0.148614" status="run">
+	<testcase name="AuthFixture.TC_SEC_01_PasswordsStoredOnlyAsSaltedHash" classname="AuthFixture.TC_SEC_01_PasswordsStoredOnlyAsSaltedHash" time="0.256884" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = AuthFixture.TC_SEC_01_PasswordsStoredOnlyAsSaltedHash
@@ -448,15 +448,15 @@ Note: Google Test filter = AuthFixture.TC_SEC_01_PasswordsStoredOnlyAsSaltedHash
 [----------] Global test environment set-up.
 [----------] 1 test from AuthFixture
 [ RUN      ] AuthFixture.TC_SEC_01_PasswordsStoredOnlyAsSaltedHash
-[       OK ] AuthFixture.TC_SEC_01_PasswordsStoredOnlyAsSaltedHash (126 ms)
-[----------] 1 test from AuthFixture (126 ms total)
+[       OK ] AuthFixture.TC_SEC_01_PasswordsStoredOnlyAsSaltedHash (221 ms)
+[----------] 1 test from AuthFixture (221 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (126 ms total)
+[==========] 1 test from 1 test suite ran. (221 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="AuthFixture.BootstrapOnlyOnFirstRun" classname="AuthFixture.BootstrapOnlyOnFirstRun" time="0.117454" status="run">
+	<testcase name="AuthFixture.BootstrapOnlyOnFirstRun" classname="AuthFixture.BootstrapOnlyOnFirstRun" time="0.201569" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = AuthFixture.BootstrapOnlyOnFirstRun
@@ -464,15 +464,15 @@ Note: Google Test filter = AuthFixture.BootstrapOnlyOnFirstRun
 [----------] Global test environment set-up.
 [----------] 1 test from AuthFixture
 [ RUN      ] AuthFixture.BootstrapOnlyOnFirstRun
-[       OK ] AuthFixture.BootstrapOnlyOnFirstRun (94 ms)
-[----------] 1 test from AuthFixture (94 ms total)
+[       OK ] AuthFixture.BootstrapOnlyOnFirstRun (166 ms)
+[----------] 1 test from AuthFixture (167 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (94 ms total)
+[==========] 1 test from 1 test suite ran. (167 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="BackupFixture.TC_DATA_02_BackupAndRestore" classname="BackupFixture.TC_DATA_02_BackupAndRestore" time="0.0968149" status="run">
+	<testcase name="BackupFixture.TC_DATA_02_BackupAndRestore" classname="BackupFixture.TC_DATA_02_BackupAndRestore" time="0.142381" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = BackupFixture.TC_DATA_02_BackupAndRestore
@@ -480,15 +480,15 @@ Note: Google Test filter = BackupFixture.TC_DATA_02_BackupAndRestore
 [----------] Global test environment set-up.
 [----------] 1 test from BackupFixture
 [ RUN      ] BackupFixture.TC_DATA_02_BackupAndRestore
-[       OK ] BackupFixture.TC_DATA_02_BackupAndRestore (74 ms)
-[----------] 1 test from BackupFixture (74 ms total)
+[       OK ] BackupFixture.TC_DATA_02_BackupAndRestore (108 ms)
+[----------] 1 test from BackupFixture (108 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (74 ms total)
+[==========] 1 test from 1 test suite ran. (108 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="BackupFixture.TC_PERF_02_StartupUnder5Seconds" classname="BackupFixture.TC_PERF_02_StartupUnder5Seconds" time="0.405455" status="run">
+	<testcase name="BackupFixture.TC_PERF_02_StartupUnder5Seconds" classname="BackupFixture.TC_PERF_02_StartupUnder5Seconds" time="0.666404" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = BackupFixture.TC_PERF_02_StartupUnder5Seconds
@@ -496,16 +496,16 @@ Note: Google Test filter = BackupFixture.TC_PERF_02_StartupUnder5Seconds
 [----------] Global test environment set-up.
 [----------] 1 test from BackupFixture
 [ RUN      ] BackupFixture.TC_PERF_02_StartupUnder5Seconds
-[ PERF ] start-up load took 0.233777 s
-[       OK ] BackupFixture.TC_PERF_02_StartupUnder5Seconds (379 ms)
-[----------] 1 test from BackupFixture (380 ms total)
+[ PERF ] start-up load took 0.397069 s
+[       OK ] BackupFixture.TC_PERF_02_StartupUnder5Seconds (627 ms)
+[----------] 1 test from BackupFixture (627 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (380 ms total)
+[==========] 1 test from 1 test suite ran. (627 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="ConsultFixture.TC_CON_01_RecordConsultation" classname="ConsultFixture.TC_CON_01_RecordConsultation" time="0.030268" status="run">
+	<testcase name="ConsultFixture.TC_CON_01_RecordConsultation" classname="ConsultFixture.TC_CON_01_RecordConsultation" time="0.0363804" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = ConsultFixture.TC_CON_01_RecordConsultation
@@ -513,15 +513,15 @@ Note: Google Test filter = ConsultFixture.TC_CON_01_RecordConsultation
 [----------] Global test environment set-up.
 [----------] 1 test from ConsultFixture
 [ RUN      ] ConsultFixture.TC_CON_01_RecordConsultation
-[       OK ] ConsultFixture.TC_CON_01_RecordConsultation (7 ms)
-[----------] 1 test from ConsultFixture (7 ms total)
+[       OK ] ConsultFixture.TC_CON_01_RecordConsultation (1 ms)
+[----------] 1 test from ConsultFixture (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (8 ms total)
+[==========] 1 test from 1 test suite ran. (1 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="ConsultationRules.ValidationAndAge" classname="ConsultationRules.ValidationAndAge" time="0.0231764" status="run">
+	<testcase name="ConsultationRules.ValidationAndAge" classname="ConsultationRules.ValidationAndAge" time="0.0339221" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = ConsultationRules.ValidationAndAge
@@ -537,7 +537,7 @@ Note: Google Test filter = ConsultationRules.ValidationAndAge
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="DataFixture.TC_DATA_01_FullRestartAndFailedSave" classname="DataFixture.TC_DATA_01_FullRestartAndFailedSave" time="0.149336" status="run">
+	<testcase name="DataFixture.TC_DATA_01_FullRestartAndFailedSave" classname="DataFixture.TC_DATA_01_FullRestartAndFailedSave" time="0.247705" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = DataFixture.TC_DATA_01_FullRestartAndFailedSave
@@ -545,15 +545,15 @@ Note: Google Test filter = DataFixture.TC_DATA_01_FullRestartAndFailedSave
 [----------] Global test environment set-up.
 [----------] 1 test from DataFixture
 [ RUN      ] DataFixture.TC_DATA_01_FullRestartAndFailedSave
-[       OK ] DataFixture.TC_DATA_01_FullRestartAndFailedSave (126 ms)
-[----------] 1 test from DataFixture (126 ms total)
+[       OK ] DataFixture.TC_DATA_01_FullRestartAndFailedSave (214 ms)
+[----------] 1 test from DataFixture (214 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (126 ms total)
+[==========] 1 test from 1 test suite ran. (214 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="DataFixture.TC_SEC_05_OwnerOnlyPermissions" classname="DataFixture.TC_SEC_05_OwnerOnlyPermissions" time="0.0542317" status="run">
+	<testcase name="DataFixture.TC_SEC_05_OwnerOnlyPermissions" classname="DataFixture.TC_SEC_05_OwnerOnlyPermissions" time="0.0875384" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = DataFixture.TC_SEC_05_OwnerOnlyPermissions
@@ -561,15 +561,15 @@ Note: Google Test filter = DataFixture.TC_SEC_05_OwnerOnlyPermissions
 [----------] Global test environment set-up.
 [----------] 1 test from DataFixture
 [ RUN      ] DataFixture.TC_SEC_05_OwnerOnlyPermissions
-[       OK ] DataFixture.TC_SEC_05_OwnerOnlyPermissions (31 ms)
-[----------] 1 test from DataFixture (31 ms total)
+[       OK ] DataFixture.TC_SEC_05_OwnerOnlyPermissions (53 ms)
+[----------] 1 test from DataFixture (53 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (31 ms total)
+[==========] 1 test from 1 test suite ran. (53 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="DoctorFixture.TC_DOC_01_ProfilesAvailabilityAndList" classname="DoctorFixture.TC_DOC_01_ProfilesAvailabilityAndList" time="0.024104" status="run">
+	<testcase name="DoctorFixture.TC_DOC_01_ProfilesAvailabilityAndList" classname="DoctorFixture.TC_DOC_01_ProfilesAvailabilityAndList" time="0.0366465" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = DoctorFixture.TC_DOC_01_ProfilesAvailabilityAndList
@@ -585,7 +585,7 @@ Note: Google Test filter = DoctorFixture.TC_DOC_01_ProfilesAvailabilityAndList
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="FileStoreFixture.TC_DATA_01_AtomicWriteAndLoad" classname="FileStoreFixture.TC_DATA_01_AtomicWriteAndLoad" time="0.0274086" status="run">
+	<testcase name="FileStoreFixture.TC_DATA_01_AtomicWriteAndLoad" classname="FileStoreFixture.TC_DATA_01_AtomicWriteAndLoad" time="0.0344314" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = FileStoreFixture.TC_DATA_01_AtomicWriteAndLoad
@@ -593,15 +593,15 @@ Note: Google Test filter = FileStoreFixture.TC_DATA_01_AtomicWriteAndLoad
 [----------] Global test environment set-up.
 [----------] 1 test from FileStoreFixture
 [ RUN      ] FileStoreFixture.TC_DATA_01_AtomicWriteAndLoad
-[       OK ] FileStoreFixture.TC_DATA_01_AtomicWriteAndLoad (4 ms)
-[----------] 1 test from FileStoreFixture (4 ms total)
+[       OK ] FileStoreFixture.TC_DATA_01_AtomicWriteAndLoad (0 ms)
+[----------] 1 test from FileStoreFixture (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (4 ms total)
+[==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="FileStoreFixture.TC_DATA_01_WriteFailureKeepsOldData" classname="FileStoreFixture.TC_DATA_01_WriteFailureKeepsOldData" time="0.0228475" status="run">
+	<testcase name="FileStoreFixture.TC_DATA_01_WriteFailureKeepsOldData" classname="FileStoreFixture.TC_DATA_01_WriteFailureKeepsOldData" time="0.0338652" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = FileStoreFixture.TC_DATA_01_WriteFailureKeepsOldData
@@ -617,7 +617,7 @@ Note: Google Test filter = FileStoreFixture.TC_DATA_01_WriteFailureKeepsOldData
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="HistoryFixture.TC_CON_02_HistoryAndPrivacy" classname="HistoryFixture.TC_CON_02_HistoryAndPrivacy" time="0.0258924" status="run">
+	<testcase name="HistoryFixture.TC_CON_02_HistoryAndPrivacy" classname="HistoryFixture.TC_CON_02_HistoryAndPrivacy" time="0.0367418" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = HistoryFixture.TC_CON_02_HistoryAndPrivacy
@@ -633,7 +633,7 @@ Note: Google Test filter = HistoryFixture.TC_CON_02_HistoryAndPrivacy
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="HistoryFixture.TC_CON_03_ImmutableWithAddendum" classname="HistoryFixture.TC_CON_03_ImmutableWithAddendum" time="0.0269909" status="run">
+	<testcase name="HistoryFixture.TC_CON_03_ImmutableWithAddendum" classname="HistoryFixture.TC_CON_03_ImmutableWithAddendum" time="0.0375483" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = HistoryFixture.TC_CON_03_ImmutableWithAddendum
@@ -641,15 +641,15 @@ Note: Google Test filter = HistoryFixture.TC_CON_03_ImmutableWithAddendum
 [----------] Global test environment set-up.
 [----------] 1 test from HistoryFixture
 [ RUN      ] HistoryFixture.TC_CON_03_ImmutableWithAddendum
-[       OK ] HistoryFixture.TC_CON_03_ImmutableWithAddendum (4 ms)
-[----------] 1 test from HistoryFixture (4 ms total)
+[       OK ] HistoryFixture.TC_CON_03_ImmutableWithAddendum (3 ms)
+[----------] 1 test from HistoryFixture (3 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (4 ms total)
+[==========] 1 test from 1 test suite ran. (3 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="Integrity.ChecksumLineWrittenAndChecked" classname="Integrity.ChecksumLineWrittenAndChecked" time="0.023062" status="run">
+	<testcase name="Integrity.ChecksumLineWrittenAndChecked" classname="Integrity.ChecksumLineWrittenAndChecked" time="0.0344787" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = Integrity.ChecksumLineWrittenAndChecked
@@ -665,7 +665,7 @@ Note: Google Test filter = Integrity.ChecksumLineWrittenAndChecked
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="Integrity.TC_SEC_06_TamperDetectedAndRestored" classname="Integrity.TC_SEC_06_TamperDetectedAndRestored" time="0.382713" status="run">
+	<testcase name="Integrity.TC_SEC_06_TamperDetectedAndRestored" classname="Integrity.TC_SEC_06_TamperDetectedAndRestored" time="0.629044" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = Integrity.TC_SEC_06_TamperDetectedAndRestored
@@ -673,15 +673,15 @@ Note: Google Test filter = Integrity.TC_SEC_06_TamperDetectedAndRestored
 [----------] Global test environment set-up.
 [----------] 1 test from Integrity
 [ RUN      ] Integrity.TC_SEC_06_TamperDetectedAndRestored
-[       OK ] Integrity.TC_SEC_06_TamperDetectedAndRestored (359 ms)
-[----------] 1 test from Integrity (359 ms total)
+[       OK ] Integrity.TC_SEC_06_TamperDetectedAndRestored (594 ms)
+[----------] 1 test from Integrity (594 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (359 ms total)
+[==========] 1 test from 1 test suite ran. (594 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="PatientFixture.TC_PAT_01_RegisterAndReload" classname="PatientFixture.TC_PAT_01_RegisterAndReload" time="0.023638" status="run">
+	<testcase name="PatientFixture.TC_PAT_01_RegisterAndReload" classname="PatientFixture.TC_PAT_01_RegisterAndReload" time="0.0359345" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = PatientFixture.TC_PAT_01_RegisterAndReload
@@ -697,7 +697,7 @@ Note: Google Test filter = PatientFixture.TC_PAT_01_RegisterAndReload
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="PatientFixture.TC_PAT_02_Validation" classname="PatientFixture.TC_PAT_02_Validation" time="0.0228348" status="run">
+	<testcase name="PatientFixture.TC_PAT_02_Validation" classname="PatientFixture.TC_PAT_02_Validation" time="0.0345243" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = PatientFixture.TC_PAT_02_Validation
@@ -713,7 +713,7 @@ Note: Google Test filter = PatientFixture.TC_PAT_02_Validation
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="PatientFixture.TC_PAT_03_DuplicateNeedsConfirmation" classname="PatientFixture.TC_PAT_03_DuplicateNeedsConfirmation" time="0.0231762" status="run">
+	<testcase name="PatientFixture.TC_PAT_03_DuplicateNeedsConfirmation" classname="PatientFixture.TC_PAT_03_DuplicateNeedsConfirmation" time="0.0345044" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = PatientFixture.TC_PAT_03_DuplicateNeedsConfirmation
@@ -729,7 +729,7 @@ Note: Google Test filter = PatientFixture.TC_PAT_03_DuplicateNeedsConfirmation
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="PatientFixture.TC_PAT_04_SearchAndPaging" classname="PatientFixture.TC_PAT_04_SearchAndPaging" time="0.035448" status="run">
+	<testcase name="PatientFixture.TC_PAT_04_SearchAndPaging" classname="PatientFixture.TC_PAT_04_SearchAndPaging" time="0.0403677" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = PatientFixture.TC_PAT_04_SearchAndPaging
@@ -737,15 +737,15 @@ Note: Google Test filter = PatientFixture.TC_PAT_04_SearchAndPaging
 [----------] Global test environment set-up.
 [----------] 1 test from PatientFixture
 [ RUN      ] PatientFixture.TC_PAT_04_SearchAndPaging
-[       OK ] PatientFixture.TC_PAT_04_SearchAndPaging (12 ms)
-[----------] 1 test from PatientFixture (12 ms total)
+[       OK ] PatientFixture.TC_PAT_04_SearchAndPaging (6 ms)
+[----------] 1 test from PatientFixture (6 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (12 ms total)
+[==========] 1 test from 1 test suite ran. (6 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="PatientFixture.TC_PAT_05_UpdateWithAudit" classname="PatientFixture.TC_PAT_05_UpdateWithAudit" time="0.0234056" status="run">
+	<testcase name="PatientFixture.TC_PAT_05_UpdateWithAudit" classname="PatientFixture.TC_PAT_05_UpdateWithAudit" time="0.0351034" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = PatientFixture.TC_PAT_05_UpdateWithAudit
@@ -761,7 +761,7 @@ Note: Google Test filter = PatientFixture.TC_PAT_05_UpdateWithAudit
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="PatientFixture.TC_SEC_02_LongInputAndRole" classname="PatientFixture.TC_SEC_02_LongInputAndRole" time="0.0225919" status="run">
+	<testcase name="PatientFixture.TC_SEC_02_LongInputAndRole" classname="PatientFixture.TC_SEC_02_LongInputAndRole" time="0.0344226" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = PatientFixture.TC_SEC_02_LongInputAndRole
@@ -777,7 +777,7 @@ Note: Google Test filter = PatientFixture.TC_SEC_02_LongInputAndRole
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="PatientDeactivate.TC_PAT_06_AdminOnlyNeverDeleted" classname="PatientDeactivate.TC_PAT_06_AdminOnlyNeverDeleted" time="0.275279" status="run">
+	<testcase name="PatientDeactivate.TC_PAT_06_AdminOnlyNeverDeleted" classname="PatientDeactivate.TC_PAT_06_AdminOnlyNeverDeleted" time="0.462348" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = PatientDeactivate.TC_PAT_06_AdminOnlyNeverDeleted
@@ -785,15 +785,15 @@ Note: Google Test filter = PatientDeactivate.TC_PAT_06_AdminOnlyNeverDeleted
 [----------] Global test environment set-up.
 [----------] 1 test from PatientDeactivate
 [ RUN      ] PatientDeactivate.TC_PAT_06_AdminOnlyNeverDeleted
-[       OK ] PatientDeactivate.TC_PAT_06_AdminOnlyNeverDeleted (252 ms)
-[----------] 1 test from PatientDeactivate (252 ms total)
+[       OK ] PatientDeactivate.TC_PAT_06_AdminOnlyNeverDeleted (427 ms)
+[----------] 1 test from PatientDeactivate (427 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (252 ms total)
+[==========] 1 test from 1 test suite ran. (427 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="Performance.TC_PERF_02_BookCancelRescheduleAtFullLoad" classname="Performance.TC_PERF_02_BookCancelRescheduleAtFullLoad" time="9.20626" status="run">
+	<testcase name="Performance.TC_PERF_02_BookCancelRescheduleAtFullLoad" classname="Performance.TC_PERF_02_BookCancelRescheduleAtFullLoad" time="15.4075" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = Performance.TC_PERF_02_BookCancelRescheduleAtFullLoad
@@ -801,16 +801,16 @@ Note: Google Test filter = Performance.TC_PERF_02_BookCancelRescheduleAtFullLoad
 [----------] Global test environment set-up.
 [----------] 1 test from Performance
 [ RUN      ] Performance.TC_PERF_02_BookCancelRescheduleAtFullLoad
-[ PERF ] 100 operations: median 85.8485 ms, 95th percentile 101.175 ms
-[       OK ] Performance.TC_PERF_02_BookCancelRescheduleAtFullLoad (9177 ms)
-[----------] 1 test from Performance (9177 ms total)
+[ PERF ] 100 operations: median 148.046 ms, 95th percentile 150.907 ms
+[       OK ] Performance.TC_PERF_02_BookCancelRescheduleAtFullLoad (15363 ms)
+[----------] 1 test from Performance (15363 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (9177 ms total)
+[==========] 1 test from 1 test suite ran. (15363 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="Performance.TC_PERF_01_SearchAtFullCapacity" classname="Performance.TC_PERF_01_SearchAtFullCapacity" time="0.511804" status="run">
+	<testcase name="Performance.TC_PERF_01_SearchAtFullCapacity" classname="Performance.TC_PERF_01_SearchAtFullCapacity" time="0.829818" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = Performance.TC_PERF_01_SearchAtFullCapacity
@@ -818,16 +818,16 @@ Note: Google Test filter = Performance.TC_PERF_01_SearchAtFullCapacity
 [----------] Global test environment set-up.
 [----------] 1 test from Performance
 [ RUN      ] Performance.TC_PERF_01_SearchAtFullCapacity
-[ PERF ] 100 searches: median 0.271636 ms, 95th percentile 2.55784 ms
-[       OK ] Performance.TC_PERF_01_SearchAtFullCapacity (486 ms)
-[----------] 1 test from Performance (486 ms total)
+[ PERF ] 100 searches: median 0.454374 ms, 95th percentile 4.22322 ms
+[       OK ] Performance.TC_PERF_01_SearchAtFullCapacity (789 ms)
+[----------] 1 test from Performance (789 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (486 ms total)
+[==========] 1 test from 1 test suite ran. (789 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="ReportFixture.TC_RPT_01_DailyReportAndCsv" classname="ReportFixture.TC_RPT_01_DailyReportAndCsv" time="0.0271012" status="run">
+	<testcase name="ReportFixture.TC_RPT_01_DailyReportAndCsv" classname="ReportFixture.TC_RPT_01_DailyReportAndCsv" time="0.0402757" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = ReportFixture.TC_RPT_01_DailyReportAndCsv
@@ -835,15 +835,15 @@ Note: Google Test filter = ReportFixture.TC_RPT_01_DailyReportAndCsv
 [----------] Global test environment set-up.
 [----------] 1 test from ReportFixture
 [ RUN      ] ReportFixture.TC_RPT_01_DailyReportAndCsv
-[       OK ] ReportFixture.TC_RPT_01_DailyReportAndCsv (4 ms)
-[----------] 1 test from ReportFixture (4 ms total)
+[       OK ] ReportFixture.TC_RPT_01_DailyReportAndCsv (5 ms)
+[----------] 1 test from ReportFixture (5 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (4 ms total)
+[==========] 1 test from 1 test suite ran. (5 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="ReportFixture.TC_RPT_02_Workload" classname="ReportFixture.TC_RPT_02_Workload" time="0.025404" status="run">
+	<testcase name="ReportFixture.TC_RPT_02_Workload" classname="ReportFixture.TC_RPT_02_Workload" time="0.0390951" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = ReportFixture.TC_RPT_02_Workload
@@ -859,7 +859,7 @@ Note: Google Test filter = ReportFixture.TC_RPT_02_Workload
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="MoveFixture.TC_APT_04_AtomicReschedule" classname="MoveFixture.TC_APT_04_AtomicReschedule" time="0.0244672" status="run">
+	<testcase name="MoveFixture.TC_APT_04_AtomicReschedule" classname="MoveFixture.TC_APT_04_AtomicReschedule" time="0.0384921" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = MoveFixture.TC_APT_04_AtomicReschedule
@@ -875,7 +875,7 @@ Note: Google Test filter = MoveFixture.TC_APT_04_AtomicReschedule
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="MoveFixture.TC_APT_05_DailySchedule" classname="MoveFixture.TC_APT_05_DailySchedule" time="0.0271393" status="run">
+	<testcase name="MoveFixture.TC_APT_05_DailySchedule" classname="MoveFixture.TC_APT_05_DailySchedule" time="0.0405045" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = MoveFixture.TC_APT_05_DailySchedule
@@ -883,15 +883,15 @@ Note: Google Test filter = MoveFixture.TC_APT_05_DailySchedule
 [----------] Global test environment set-up.
 [----------] 1 test from MoveFixture
 [ RUN      ] MoveFixture.TC_APT_05_DailySchedule
-[       OK ] MoveFixture.TC_APT_05_DailySchedule (4 ms)
-[----------] 1 test from MoveFixture (4 ms total)
+[       OK ] MoveFixture.TC_APT_05_DailySchedule (5 ms)
+[----------] 1 test from MoveFixture (5 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (4 ms total)
+[==========] 1 test from 1 test suite ran. (5 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="SecurityCore.TC_AUTH_03_RoleMatrix" classname="SecurityCore.TC_AUTH_03_RoleMatrix" time="0.0229813" status="run">
+	<testcase name="SecurityCore.TC_AUTH_03_RoleMatrix" classname="SecurityCore.TC_AUTH_03_RoleMatrix" time="0.0344494" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = SecurityCore.TC_AUTH_03_RoleMatrix
@@ -907,7 +907,7 @@ Note: Google Test filter = SecurityCore.TC_AUTH_03_RoleMatrix
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="SecurityCore.TC_SEC_01_SaltedHash" classname="SecurityCore.TC_SEC_01_SaltedHash" time="0.144091" status="run">
+	<testcase name="SecurityCore.TC_SEC_01_SaltedHash" classname="SecurityCore.TC_SEC_01_SaltedHash" time="0.245873" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = SecurityCore.TC_SEC_01_SaltedHash
@@ -915,15 +915,15 @@ Note: Google Test filter = SecurityCore.TC_SEC_01_SaltedHash
 [----------] Global test environment set-up.
 [----------] 1 test from SecurityCore
 [ RUN      ] SecurityCore.TC_SEC_01_SaltedHash
-[       OK ] SecurityCore.TC_SEC_01_SaltedHash (121 ms)
-[----------] 1 test from SecurityCore (121 ms total)
+[       OK ] SecurityCore.TC_SEC_01_SaltedHash (211 ms)
+[----------] 1 test from SecurityCore (211 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (121 ms total)
+[==========] 1 test from 1 test suite ran. (211 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="SecurityCore.SessionsAreUniqueAndEnd" classname="SecurityCore.SessionsAreUniqueAndEnd" time="0.0221717" status="run">
+	<testcase name="SecurityCore.SessionsAreUniqueAndEnd" classname="SecurityCore.SessionsAreUniqueAndEnd" time="0.0348441" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = SecurityCore.SessionsAreUniqueAndEnd
@@ -939,7 +939,7 @@ Note: Google Test filter = SecurityCore.SessionsAreUniqueAndEnd
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="SecurityCore.AuditIsAppendOnlyAndHasNoSecrets" classname="SecurityCore.AuditIsAppendOnlyAndHasNoSecrets" time="0.022413" status="run">
+	<testcase name="SecurityCore.AuditIsAppendOnlyAndHasNoSecrets" classname="SecurityCore.AuditIsAppendOnlyAndHasNoSecrets" time="0.0344195" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = SecurityCore.AuditIsAppendOnlyAndHasNoSecrets
@@ -955,7 +955,7 @@ Note: Google Test filter = SecurityCore.AuditIsAppendOnlyAndHasNoSecrets
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="Session.TC_SEC_04_IdleTimeout" classname="Session.TC_SEC_04_IdleTimeout" time="0.0220581" status="run">
+	<testcase name="Session.TC_SEC_04_IdleTimeout" classname="Session.TC_SEC_04_IdleTimeout" time="0.0344594" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = Session.TC_SEC_04_IdleTimeout
@@ -971,7 +971,7 @@ Note: Google Test filter = Session.TC_SEC_04_IdleTimeout
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="Password.TC_AUTH_05_ChangePassword" classname="Password.TC_AUTH_05_ChangePassword" time="0.55017" status="run">
+	<testcase name="Password.TC_AUTH_05_ChangePassword" classname="Password.TC_AUTH_05_ChangePassword" time="0.933509" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = Password.TC_AUTH_05_ChangePassword
@@ -979,15 +979,15 @@ Note: Google Test filter = Password.TC_AUTH_05_ChangePassword
 [----------] Global test environment set-up.
 [----------] 1 test from Password
 [ RUN      ] Password.TC_AUTH_05_ChangePassword
-[       OK ] Password.TC_AUTH_05_ChangePassword (527 ms)
-[----------] 1 test from Password (527 ms total)
+[       OK ] Password.TC_AUTH_05_ChangePassword (898 ms)
+[----------] 1 test from Password (898 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (527 ms total)
+[==========] 1 test from 1 test suite ran. (898 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="AuditViewer.TC_SEC_03_FilterByDateAndUser" classname="AuditViewer.TC_SEC_03_FilterByDateAndUser" time="0.0227789" status="run">
+	<testcase name="AuditViewer.TC_SEC_03_FilterByDateAndUser" classname="AuditViewer.TC_SEC_03_FilterByDateAndUser" time="0.0353615" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = AuditViewer.TC_SEC_03_FilterByDateAndUser
@@ -1003,7 +1003,119 @@ Note: Google Test filter = AuditViewer.TC_SEC_03_FilterByDateAndUser
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="Skeleton.Sha256KnownVectors" classname="Skeleton.Sha256KnownVectors" time="0.0225347" status="run">
+	<testcase name="SF1Paths.TC_AUTH_01_FirstRunAndLoginInputRules" classname="SF1Paths.TC_AUTH_01_FirstRunAndLoginInputRules" time="0.0879619" status="run">
+		<properties/>
+		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SF1Paths.TC_AUTH_01_FirstRunAndLoginInputRules
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SF1Paths
+[ RUN      ] SF1Paths.TC_AUTH_01_FirstRunAndLoginInputRules
+[       OK ] SF1Paths.TC_AUTH_01_FirstRunAndLoginInputRules (53 ms)
+[----------] 1 test from SF1Paths (53 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (53 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="SF1Paths.TC_AUTH_04_UserStatusRules" classname="SF1Paths.TC_AUTH_04_UserStatusRules" time="0.513743" status="run">
+		<properties/>
+		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SF1Paths.TC_AUTH_04_UserStatusRules
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SF1Paths
+[ RUN      ] SF1Paths.TC_AUTH_04_UserStatusRules
+[       OK ] SF1Paths.TC_AUTH_04_UserStatusRules (478 ms)
+[----------] 1 test from SF1Paths (478 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (478 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="SF1Paths.TC_DATA_01_FailedSaveOfUsersChangesNothing" classname="SF1Paths.TC_DATA_01_FailedSaveOfUsersChangesNothing" time="0.727413" status="run">
+		<properties/>
+		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SF1Paths.TC_DATA_01_FailedSaveOfUsersChangesNothing
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SF1Paths
+[ RUN      ] SF1Paths.TC_DATA_01_FailedSaveOfUsersChangesNothing
+[       OK ] SF1Paths.TC_DATA_01_FailedSaveOfUsersChangesNothing (691 ms)
+[----------] 1 test from SF1Paths (691 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (691 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="SF1Paths.TC_SEC_06_MalformedUsersFileIsE040" classname="SF1Paths.TC_SEC_06_MalformedUsersFileIsE040" time="0.0358647" status="run">
+		<properties/>
+		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SF1Paths.TC_SEC_06_MalformedUsersFileIsE040
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SF1Paths
+[ RUN      ] SF1Paths.TC_SEC_06_MalformedUsersFileIsE040
+[       OK ] SF1Paths.TC_SEC_06_MalformedUsersFileIsE040 (0 ms)
+[----------] 1 test from SF1Paths (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="SF1Paths.TC_SEC_03_AuditToleratesDamagedLinesAndMissingFolder" classname="SF1Paths.TC_SEC_03_AuditToleratesDamagedLinesAndMissingFolder" time="0.034569" status="run">
+		<properties/>
+		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SF1Paths.TC_SEC_03_AuditToleratesDamagedLinesAndMissingFolder
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SF1Paths
+[ RUN      ] SF1Paths.TC_SEC_03_AuditToleratesDamagedLinesAndMissingFolder
+[       OK ] SF1Paths.TC_SEC_03_AuditToleratesDamagedLinesAndMissingFolder (0 ms)
+[----------] 1 test from SF1Paths (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="SF1Paths.TC_WEB_01_FirstRunSetupThroughTheWebsite" classname="SF1Paths.TC_WEB_01_FirstRunSetupThroughTheWebsite" time="0.14759" status="run">
+		<properties/>
+		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SF1Paths.TC_WEB_01_FirstRunSetupThroughTheWebsite
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SF1Paths
+[ RUN      ] SF1Paths.TC_WEB_01_FirstRunSetupThroughTheWebsite
+[       OK ] SF1Paths.TC_WEB_01_FirstRunSetupThroughTheWebsite (112 ms)
+[----------] 1 test from SF1Paths (112 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (112 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="SF1Paths.TC_WEB_02_AccountRoutesRefuseBadInput" classname="SF1Paths.TC_WEB_02_AccountRoutesRefuseBadInput" time="0.791804" status="run">
+		<properties/>
+		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SF1Paths.TC_WEB_02_AccountRoutesRefuseBadInput
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SF1Paths
+[ RUN      ] SF1Paths.TC_WEB_02_AccountRoutesRefuseBadInput
+[       OK ] SF1Paths.TC_WEB_02_AccountRoutesRefuseBadInput (755 ms)
+[----------] 1 test from SF1Paths (755 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (755 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="Skeleton.Sha256KnownVectors" classname="Skeleton.Sha256KnownVectors" time="0.0353466" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = Skeleton.Sha256KnownVectors
@@ -1019,7 +1131,7 @@ Note: Google Test filter = Skeleton.Sha256KnownVectors
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="Skeleton.ResultCarriesValueOrError" classname="Skeleton.ResultCarriesValueOrError" time="0.0228008" status="run">
+	<testcase name="Skeleton.ResultCarriesValueOrError" classname="Skeleton.ResultCarriesValueOrError" time="0.0346487" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = Skeleton.ResultCarriesValueOrError
@@ -1035,7 +1147,7 @@ Note: Google Test filter = Skeleton.ResultCarriesValueOrError
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="Skeleton.CodecRoundTripWithPipesAndBackslashes" classname="Skeleton.CodecRoundTripWithPipesAndBackslashes" time="0.0226409" status="run">
+	<testcase name="Skeleton.CodecRoundTripWithPipesAndBackslashes" classname="Skeleton.CodecRoundTripWithPipesAndBackslashes" time="0.0344938" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = Skeleton.CodecRoundTripWithPipesAndBackslashes
@@ -1051,7 +1163,7 @@ Note: Google Test filter = Skeleton.CodecRoundTripWithPipesAndBackslashes
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="Skeleton.DateTimeHelpers" classname="Skeleton.DateTimeHelpers" time="0.0224565" status="run">
+	<testcase name="Skeleton.DateTimeHelpers" classname="Skeleton.DateTimeHelpers" time="0.0344419" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = Skeleton.DateTimeHelpers
@@ -1067,7 +1179,7 @@ Note: Google Test filter = Skeleton.DateTimeHelpers
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="Skeleton.ValidatorRules" classname="Skeleton.ValidatorRules" time="0.0225075" status="run">
+	<testcase name="Skeleton.ValidatorRules" classname="Skeleton.ValidatorRules" time="0.0341686" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = Skeleton.ValidatorRules
@@ -1083,7 +1195,7 @@ Note: Google Test filter = Skeleton.ValidatorRules
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="StatusFixture.TC_APT_03_CancelFreesSlot" classname="StatusFixture.TC_APT_03_CancelFreesSlot" time="0.0250355" status="run">
+	<testcase name="StatusFixture.TC_APT_03_CancelFreesSlot" classname="StatusFixture.TC_APT_03_CancelFreesSlot" time="0.0368071" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = StatusFixture.TC_APT_03_CancelFreesSlot
@@ -1091,15 +1203,15 @@ Note: Google Test filter = StatusFixture.TC_APT_03_CancelFreesSlot
 [----------] Global test environment set-up.
 [----------] 1 test from StatusFixture
 [ RUN      ] StatusFixture.TC_APT_03_CancelFreesSlot
-[       OK ] StatusFixture.TC_APT_03_CancelFreesSlot (2 ms)
-[----------] 1 test from StatusFixture (2 ms total)
+[       OK ] StatusFixture.TC_APT_03_CancelFreesSlot (1 ms)
+[----------] 1 test from StatusFixture (1 ms total)
 
 [----------] Global test environment tear-down
 [==========] 1 test from 1 test suite ran. (2 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>
-	<testcase name="StatusFixture.TC_APT_06_StatusTransitions" classname="StatusFixture.TC_APT_06_StatusTransitions" time="0.0276711" status="run">
+	<testcase name="StatusFixture.TC_APT_06_StatusTransitions" classname="StatusFixture.TC_APT_06_StatusTransitions" time="0.0398525" status="run">
 		<properties/>
 		<system-out>Running main() from /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports/_deps/googletest-src/googletest/src/gtest_main.cc
 Note: Google Test filter = StatusFixture.TC_APT_06_StatusTransitions
@@ -1107,11 +1219,11 @@ Note: Google Test filter = StatusFixture.TC_APT_06_StatusTransitions
 [----------] Global test environment set-up.
 [----------] 1 test from StatusFixture
 [ RUN      ] StatusFixture.TC_APT_06_StatusTransitions
-[       OK ] StatusFixture.TC_APT_06_StatusTransitions (4 ms)
-[----------] 1 test from StatusFixture (4 ms total)
+[       OK ] StatusFixture.TC_APT_06_StatusTransitions (5 ms)
+[----------] 1 test from StatusFixture (5 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (4 ms total)
+[==========] 1 test from 1 test suite ran. (5 ms total)
 [  PASSED  ] 1 test.
 </system-out>
 	</testcase>

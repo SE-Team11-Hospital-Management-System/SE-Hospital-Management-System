@@ -361,7 +361,8 @@ def unit_report(ctx, cpp, web):
 
 def tc_results(cpp_by_name, web, ctx):
     out = {}
-    for tc, names in TC_TESTS.items():
+    for tc, listed in TC_TESTS.items():
+        names = list(listed) + sorted(n for n in cpp_by_name if n not in listed and re.search(r"TC_([A-Z]+)_(\d\d)", n) and tc_of(n) == tc)
         found, fails = [], []
         for n in names:
             if n == "web:*":
@@ -456,7 +457,7 @@ def coverage_report(ctx, cj, wj):
         t = wj["total"]
         s += f"| Website lines (`web/src/`) | {t['lines']['covered']} | {t['lines']['total']} | {fmt(t['lines']['pct'])} | reported only | — |\n"
         s += f"| Website functions | {t['functions']['covered']} | {t['functions']['total']} | {fmt(t['functions']['pct'])} | reported only | — |\n"
-    s += "\nCoverage comes from all 69 C++ tests (unit, integration and web API) and the website page tests. `src/main.cpp` (start-up wiring only) is left out. "
+    s += f"\nCoverage comes from all {ctx['ncpp']} C++ tests (unit, integration and web API) and the {ctx['nweb']} website page tests. `src/main.cpp` (start-up wiring only) is left out. "
     s += "The website pages only display data; every rule is checked again by the C++ server, whose coverage is above.\n\n"
     s += "Open `coverage/cpp/index.html` for the line-by-line view of every C++ file (green = run by a test, red = not run).\n\n"
     s += "## C++ by layer\n\n| Layer | Lines covered | Lines | Line coverage |\n|---|---|---|---|\n"
@@ -528,6 +529,24 @@ def readme(ctx, totals):
             "or run `python3 tools/make_test_reports.py` on a computer with CMake, g++, gcovr and Node.js.\n")
 
 
+MARK_START, MARK_END = "<!-- MANUAL-CHECKS:START -->", "<!-- MANUAL-CHECKS:END -->"
+
+
+def earlier_manual_checks():
+    """The website checks are done by a person, not by this script: keep the ones already in the report."""
+    p = os.path.join(OUT, "SYSTEM_VALIDATION_REPORT.md")
+    if not os.path.exists(p):
+        return ""
+    t = open(p, encoding="utf-8").read()
+    if MARK_START not in t or MARK_END not in t:
+        return ""
+    body = t[t.index(MARK_START) + len(MARK_START):t.index(MARK_END)].strip("\n")
+    if body.startswith("Not recorded"):
+        return ""
+    note = "*Carried over from the earlier report: these checks are done by a person; the product code has not changed since.*"
+    return (body if note in body else note + "\n\n" + body) + "\n"
+
+
 def usability():
     p = os.path.join(ROOT, "docs", "sprint2", "USABILITY.md")
     if not os.path.exists(p):
@@ -547,6 +566,7 @@ def main():
     ap.add_argument("--reuse-build", action="store_true", help="keep build-reports/ from an earlier run")
     a = ap.parse_args()
     OUT = os.path.join(ROOT, a.out)
+    manual = earlier_manual_checks()
     shutil.rmtree(OUT, ignore_errors=True)
     res = os.path.join(OUT, "results")
     os.makedirs(res)
@@ -574,6 +594,7 @@ def main():
         "warnings": c["warnings"], "function_length": c["function_length"],
         "perf": perf_lines(cpp), "usability": usability(),
         "svc_line": pct(sum(f["line_covered"] for f in svc), sum(f["line_total"] for f in svc)),
+        "ncpp": len(cpp), "nweb": len(web),
         "branch": cj["branch_percent"], "gcovr": first_line("gcovr --version").replace("gcovr ", ""),
     }
     if ci:
@@ -604,6 +625,10 @@ def main():
               "code": f"C++ lines {fmt(cj['line_percent'])}, service layer {fmt(ctx['svc_line'])}",
               "branch": f"C++ branches {fmt(cj['branch_percent'])}"}
     files["README.md"] = readme(ctx, totals)
+    if manual:
+        sv = files["SYSTEM_VALIDATION_REPORT.md"]
+        a_, b_ = sv.index(MARK_START), sv.index(MARK_END)
+        files["SYSTEM_VALIDATION_REPORT.md"] = sv[:a_] + MARK_START + "\n" + manual + sv[b_:]
     for name, text in files.items():
         with open(os.path.join(OUT, name), "w", encoding="utf-8", newline="\n") as f:
             f.write(text)

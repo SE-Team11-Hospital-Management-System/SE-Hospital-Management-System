@@ -1,28 +1,84 @@
 $ ['/opt/hostedtoolcache/node/20.20.2/x64/bin/npm', 'ci', '--no-audit', '--no-fund']
 
-added 210 packages in 3s
+added 210 packages in 6s
 npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
 $ ['/opt/hostedtoolcache/node/20.20.2/x64/bin/npm', 'install', '--no-save', '--no-audit', '--no-fund', '@vitest/coverage-v8@2.1.8']
 
-added 51 packages in 3s
+added 51 packages in 4s
 npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
-$ ['/opt/hostedtoolcache/node/20.20.2/x64/bin/npx', 'vitest', 'run', '--coverage.enabled=true', '--coverage.provider=v8', '--coverage.reporter=json-summary', '--coverage.reporter=html', '--coverage.reportsDirectory=/tmp/hms-webcov-r204gdvt', '--coverage.include=src/**', '--coverage.exclude=src/test/**', '--reporter=default', '--reporter=junit', '--outputFile.junit=/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/docs/part3/results/web-junit.xml']
+$ ['/opt/hostedtoolcache/node/20.20.2/x64/bin/npx', 'vitest', 'run', '--coverage.enabled=true', '--coverage.provider=v8', '--coverage.reporter=json-summary', '--coverage.reporter=html', '--coverage.reportsDirectory=/tmp/hms-webcov-4hl8wuz7', '--coverage.include=src/**', '--coverage.exclude=src/test/**', '--reporter=default', '--reporter=junit', '--outputFile.junit=/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/docs/part3/results/web-junit.xml']
 
 [1m[7m[36m RUN [39m[27m[22m [36mv2.1.8 [39m[90m/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web[39m
       [2mCoverage enabled with [22m[33mv8[39m
 
- [32m✓[39m src/test/pages.test.tsx [2m([22m[2m15 tests[22m[2m)[22m[33m 695[2mms[22m[39m
+ [32m✓[39m src/test/security_pages.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 3528[2mms[22m[39m
+   [33m[2m✓[22m[39m login page (TC-AUTH-01, TC-AUTH-02, TC-WEB-01)[2m > [22mshows the generic E001 message, clears the password, then logs in [33m542[2mms[22m[39m
+   [33m[2m✓[22m[39m login page (TC-AUTH-01, TC-AUTH-02, TC-WEB-01)[2m > [22mfirst run: the two passwords must match, then the Administrator is created [33m312[2mms[22m[39m
+   [33m[2m✓[22m[39m pages of a logged-in Administrator (TC-AUTH-04, TC-AUTH-05, TC-SEC-03, TC-WEB-02)[2m > [22muser accounts: create (duplicate refused), deactivate and reactivate; no button for my own account [33m1080[2mms[22m[39m
+   [33m[2m✓[22m[39m pages of a logged-in Administrator (TC-AUTH-04, TC-AUTH-05, TC-SEC-03, TC-WEB-02)[2m > [22maudit log: shows names, filters by date range and reports a bad range (E010) [33m403[2mms[22m[39m
+   [33m[2m✓[22m[39m pages of a logged-in Administrator (TC-AUTH-04, TC-AUTH-05, TC-SEC-03, TC-WEB-02)[2m > [22mchange my password: repeat must match, server rule is shown, success clears the form [33m367[2mms[22m[39m
+   [33m[2m✓[22m[39m pages of a logged-in Administrator (TC-AUTH-04, TC-AUTH-05, TC-SEC-03, TC-WEB-02)[2m > [22mlogs out by itself after 10 minutes without activity (TC-SEC-04) [33m359[2mms[22m[39m
+ [32m✓[39m src/test/patient_pages.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 4584[2mms[22m[39m
+   [33m[2m✓[22m[39m patients page (TC-PAT-01..06, TC-WEB-03)[2m > [22msearch shows results with paging; an empty search sends nothing [33m854[2mms[22m[39m
+   [33m[2m✓[22m[39m patients page (TC-PAT-01..06, TC-WEB-03)[2m > [22mregister: a duplicate asks first (HMS-F-015); No saves nothing, Yes registers a second record [33m1373[2mms[22m[39m
+   [33m[2m✓[22m[39m patients page (TC-PAT-01..06, TC-WEB-03)[2m > [22mregister shows the field rule from the server (E010); edit keeps ID, date of birth and gender [33m1395[2mms[22m[39m
+   [33m[2m✓[22m[39m patients page (TC-PAT-01..06, TC-WEB-03)[2m > [22monly the Administrator deactivates, after confirming; the record stays and shows Inactive (HMS-F-014) [33m420[2mms[22m[39m
+ [32m✓[39m src/test/appointment_pages.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 5614[2mms[22m[39m
+   [33m[2m✓[22m[39m doctors page (TC-DOC-01, TC-WEB-04)[2m > [22mfilters by specialization; Administrator adds a doctor linked to a Doctor account [33m1006[2mms[22m[39m
+   [33m[2m✓[22m[39m doctors page (TC-DOC-01, TC-WEB-04)[2m > [22mworking hours: one block per ticked weekday; a refused change shows the rule (E010) [33m2067[2mms[22m[39m
+   [33m[2m✓[22m[39m appointments page (TC-APT-01..06, TC-WEB-04)[2m > [22mbook: unknown patient is E020; a taken slot offers 3 free slots and one click books it [33m765[2mms[22m[39m
+   [33m[2m✓[22m[39m appointments page (TC-APT-01..06, TC-WEB-04)[2m > [22mmanage: cancel and no-show ask first; a refused change shows E032; reschedule moves it [33m1620[2mms[22m[39m
+ [32m✓[39m src/test/pages.test.tsx [2m([22m[2m15 tests[22m[2m)[22m[33m 1481[2mms[22m[39m
+ [32m✓[39m src/test/clinical_pages.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 2578[2mms[22m[39m
+   [33m[2m✓[22m[39m consultations page (TC-CON-01..03, TC-WEB-05)[2m > [22mthe patient is shown before saving (HMS-NF-010); No — discard saves nothing [33m616[2mms[22m[39m
+   [33m[2m✓[22m[39m consultations page (TC-CON-01..03, TC-WEB-05)[2m > [22mYes — save sends the diagnosis and prescription, confirmed [33m434[2mms[22m[39m
+   [33m[2m✓[22m[39m consultations page (TC-CON-01..03, TC-WEB-05)[2m > [22ma refused save returns to the form with the rule (E010); history shows prescriptions and addenda; addendum is added [33m718[2mms[22m[39m
+   [33m[2m✓[22m[39m reports and backups (TC-RPT-01, TC-RPT-02, TC-DATA-02, TC-WEB-05)[2m > [22mbackups: create one, restore only after Yes (with confirm: true) [33m329[2mms[22m[39m
 
-[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
-[2m      Tests [22m [1m[32m15 passed[39m[22m[90m (15)[39m
-[2m   Start at [22m 06:32:41
-[2m   Duration [22m 2.15s[2m (transform 182ms, setup 14ms, collect 798ms, tests 695ms, environment 270ms, prepare 46ms)[22m
+[2m Test Files [22m [1m[32m5 passed[39m[22m[90m (5)[39m
+[2m      Tests [22m [1m[32m43 passed[39m[22m[90m (43)[39m
+[2m   Start at [22m 17:28:35
+[2m   Duration [22m 12.14s[2m (transform 658ms, setup 104ms, collect 8.34s, tests 17.79s, environment 3.51s, prepare 627ms)[22m
 
 JUNIT report written to /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/docs/part3/results/web-junit.xml
+[90mstderr[2m | src/test/appointment_pages.test.tsx[2m > [22m[2mdoctors page (TC-DOC-01, TC-WEB-04)[2m > [22m[2mfilters by specialization; Administrator adds a doctor linked to a Doctor account
+[22m[39m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+[90mstderr[2m | src/test/security_pages.test.tsx[2m > [22m[2mlogin page (TC-AUTH-01, TC-AUTH-02, TC-WEB-01)[2m > [22m[2mshows the generic E001 message, clears the password, then logs in
+[22m[39m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+[90mstderr[2m | src/test/patient_pages.test.tsx[2m > [22m[2mpatients page (TC-PAT-01..06, TC-WEB-03)[2m > [22m[2msearch shows results with paging; an empty search sends nothing
+[22m[39m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+[90mstderr[2m | src/test/security_pages.test.tsx
+[22m[39mError: Not implemented: navigation (except hash changes)
+    at module.exports (/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+    at navigateFetch (/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web/node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+    at exports.navigate (/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web/node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+    at Timeout._onTimeout (/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web/node_modules/jsdom/lib/jsdom/living/nodes/HTMLHyperlinkElementUtils-impl.js:81:7)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) [90mundefined[39m
+
+[90mstderr[2m | src/test/clinical_pages.test.tsx[2m > [22m[2mconsultations page (TC-CON-01..03, TC-WEB-05)[2m > [22m[2mthe patient is shown before saving (HMS-NF-010); No — discard saves nothing
+[22m[39m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
 [90mstderr[2m | src/test/pages.test.tsx[2m > [22m[2mevery page opens[2m > [22m[2m/ shows heading /^Welcome, tester$/ for Receptionist
 [22m[39m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
 ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+[90mstderr[2m | src/test/clinical_pages.test.tsx[2m > [22m[2mreports and backups (TC-RPT-01, TC-RPT-02, TC-DATA-02, TC-WEB-05)[2m > [22m[2mdaily report shows totals and each doctor; CSV download uses the login token
+[22m[39mError: Not implemented: navigation (except hash changes)
+    at module.exports (/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+    at navigateFetch (/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web/node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+    at exports.navigate (/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web/node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+    at Timeout._onTimeout (/home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/web/node_modules/jsdom/lib/jsdom/living/nodes/HTMLHyperlinkElementUtils-impl.js:81:7)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) [90mundefined[39m
 
 
