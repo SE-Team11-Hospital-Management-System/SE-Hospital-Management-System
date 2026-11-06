@@ -59,8 +59,8 @@
             "function_covered": 13,
             "function_percent": 100.0,
             "branch_total": 310,
-            "branch_covered": 208,
-            "branch_percent": 67.1
+            "branch_covered": 229,
+            "branch_percent": 73.9
         },
         {
             "filename": "src/api/routes_backup.cpp",
@@ -119,8 +119,8 @@
             "function_covered": 2,
             "function_percent": 100.0,
             "branch_total": 42,
-            "branch_covered": 26,
-            "branch_percent": 61.9
+            "branch_covered": 30,
+            "branch_percent": 71.4
         },
         {
             "filename": "src/api/routes_reports.cpp",
@@ -137,14 +137,14 @@
         {
             "filename": "src/api/routes_status.cpp",
             "line_total": 22,
-            "line_covered": 20,
-            "line_percent": 90.9,
+            "line_covered": 21,
+            "line_percent": 95.5,
             "function_total": 4,
             "function_covered": 4,
             "function_percent": 100.0,
             "branch_total": 106,
-            "branch_covered": 52,
-            "branch_percent": 49.1
+            "branch_covered": 64,
+            "branch_percent": 60.4
         },
         {
             "filename": "src/app/app_context.cpp",
@@ -275,8 +275,8 @@
             "function_covered": 4,
             "function_percent": 100.0,
             "branch_total": 56,
-            "branch_covered": 43,
-            "branch_percent": 76.8
+            "branch_covered": 45,
+            "branch_percent": 80.4
         },
         {
             "filename": "src/security/audit_service.h",
@@ -347,8 +347,8 @@
             "function_covered": 12,
             "function_percent": 100.0,
             "branch_total": 129,
-            "branch_covered": 82,
-            "branch_percent": 63.6
+            "branch_covered": 88,
+            "branch_percent": 68.2
         },
         {
             "filename": "src/services/appointment_service.cpp",
@@ -377,14 +377,14 @@
         {
             "filename": "src/services/auth_service.cpp",
             "line_total": 125,
-            "line_covered": 123,
-            "line_percent": 98.4,
+            "line_covered": 125,
+            "line_percent": 100.0,
             "function_total": 15,
             "function_covered": 15,
             "function_percent": 100.0,
             "branch_total": 258,
-            "branch_covered": 198,
-            "branch_percent": 76.7
+            "branch_covered": 244,
+            "branch_percent": 94.6
         },
         {
             "filename": "src/services/auth_service.h",
@@ -437,14 +437,14 @@
         {
             "filename": "src/services/doctor_service.cpp",
             "line_total": 112,
-            "line_covered": 110,
-            "line_percent": 98.2,
+            "line_covered": 111,
+            "line_percent": 99.1,
             "function_total": 14,
             "function_covered": 14,
             "function_percent": 100.0,
             "branch_total": 292,
-            "branch_covered": 200,
-            "branch_percent": 68.5
+            "branch_covered": 201,
+            "branch_percent": 68.8
         },
         {
             "filename": "src/services/doctor_service.h",
@@ -496,12 +496,12 @@
         }
     ],
     "line_total": 1631,
-    "line_covered": 1580,
-    "line_percent": 96.9,
+    "line_covered": 1584,
+    "line_percent": 97.1,
     "function_total": 340,
     "function_covered": 333,
     "function_percent": 97.9,
     "branch_total": 4290,
-    "branch_covered": 2972,
-    "branch_percent": 69.3
+    "branch_covered": 3064,
+    "branch_percent": 71.4
 }

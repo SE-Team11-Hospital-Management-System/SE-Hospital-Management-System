@@ -2,145 +2,159 @@ $ ['ctest', '--test-dir', '/home/runner/work/SE-Hospital-Management-System/SE-Ho
 Internal ctest changing into directory: /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports
 Test project /home/runner/work/SE-Hospital-Management-System/SE-Hospital-Management-System/build-reports
       Start  1: AccessCheck.DeniedRoleIsE004AndAuditLogged
- 1/69 Test  #1: AccessCheck.DeniedRoleIsE004AndAuditLogged ....................   Passed    0.02 sec
+ 1/76 Test  #1: AccessCheck.DeniedRoleIsE004AndAuditLogged ......................   Passed    0.03 sec
       Start  2: AccessCheck.UnknownOrEndedSessionIsE003
- 2/69 Test  #2: AccessCheck.UnknownOrEndedSessionIsE003 .......................   Passed    0.02 sec
+ 2/76 Test  #2: AccessCheck.UnknownOrEndedSessionIsE003 .........................   Passed    0.03 sec
       Start  3: AccessCheck.AppContextAttachesItself
- 3/69 Test  #3: AccessCheck.AppContextAttachesItself ..........................   Passed    0.28 sec
+ 3/76 Test  #3: AccessCheck.AppContextAttachesItself ............................   Passed    0.46 sec
       Start  4: WebApi.DoctorsAppointmentsAndSchedule
- 4/69 Test  #4: WebApi.DoctorsAppointmentsAndSchedule .........................   Passed    0.44 sec
+ 4/76 Test  #4: WebApi.DoctorsAppointmentsAndSchedule ...........................   Passed    0.68 sec
       Start  5: WebApi.PasswordUsersAndAudit
- 5/69 Test  #5: WebApi.PasswordUsersAndAudit ..................................   Passed    0.53 sec
+ 5/76 Test  #5: WebApi.PasswordUsersAndAudit ....................................   Passed    0.85 sec
       Start  6: WebApi.ConsultationsNeedConfirmationAndStayPrivate
- 6/69 Test  #6: WebApi.ConsultationsNeedConfirmationAndStayPrivate ............   Passed    0.38 sec
+ 6/76 Test  #6: WebApi.ConsultationsNeedConfirmationAndStayPrivate ..............   Passed    0.63 sec
       Start  7: WebApi.StatusLoginAndSession
- 7/69 Test  #7: WebApi.StatusLoginAndSession ..................................   Passed    0.40 sec
+ 7/76 Test  #7: WebApi.StatusLoginAndSession ....................................   Passed    0.57 sec
       Start  8: WebApi.DoctorLoginCarriesOwnProfile
- 8/69 Test  #8: WebApi.DoctorLoginCarriesOwnProfile ...........................   Passed    0.32 sec
+ 8/76 Test  #8: WebApi.DoctorLoginCarriesOwnProfile .............................   Passed    0.52 sec
       Start  9: WebApi.FirstRunSetupOnlyOnce
- 9/69 Test  #9: WebApi.FirstRunSetupOnlyOnce ..................................   Passed    0.32 sec
+ 9/76 Test  #9: WebApi.FirstRunSetupOnlyOnce ....................................   Passed    0.47 sec
       Start 10: WebApi.BadJsonIsE010
-10/69 Test #10: WebApi.BadJsonIsE010 ..........................................   Passed    0.29 sec
+10/76 Test #10: WebApi.BadJsonIsE010 ............................................   Passed    0.46 sec
       Start 11: WebApi.ServesTheWebsiteAndFallsBackToIndex
-11/69 Test #11: WebApi.ServesTheWebsiteAndFallsBackToIndex ....................   Passed    0.29 sec
+11/76 Test #11: WebApi.ServesTheWebsiteAndFallsBackToIndex ......................   Passed    0.47 sec
       Start 12: WebApi.RefusesRequestsFromOtherSites
-12/69 Test #12: WebApi.RefusesRequestsFromOtherSites ..........................   Passed    0.32 sec
+12/76 Test #12: WebApi.RefusesRequestsFromOtherSites ............................   Passed    0.52 sec
       Start 13: WebApi.PatientsRegisterSearchUpdateDeactivate
-13/69 Test #13: WebApi.PatientsRegisterSearchUpdateDeactivate .................   Passed    0.39 sec
+13/76 Test #13: WebApi.PatientsRegisterSearchUpdateDeactivate ...................   Passed    0.63 sec
       Start 14: WebApi.TC_SEC_06_RecoveryModeAndRestore
-14/69 Test #14: WebApi.TC_SEC_06_RecoveryModeAndRestore .......................   Passed    0.39 sec
+14/76 Test #14: WebApi.TC_SEC_06_RecoveryModeAndRestore .........................   Passed    0.63 sec
       Start 15: WebApi.ReportsCsvAndBackups
-15/69 Test #15: WebApi.ReportsCsvAndBackups ...................................   Passed    0.40 sec
+15/76 Test #15: WebApi.ReportsCsvAndBackups .....................................   Passed    0.64 sec
       Start 16: WebSecurity.TC_SEC_07_TokensAreRandomAndChecked
-16/69 Test #16: WebSecurity.TC_SEC_07_TokensAreRandomAndChecked ...............   Passed    0.47 sec
+16/76 Test #16: WebSecurity.TC_SEC_07_TokensAreRandomAndChecked .................   Passed    0.73 sec
       Start 17: WebSecurity.TC_SEC_07_ServerListensOnLoopbackOnly
-17/69 Test #17: WebSecurity.TC_SEC_07_ServerListensOnLoopbackOnly .............   Passed    0.29 sec
+17/76 Test #17: WebSecurity.TC_SEC_07_ServerListensOnLoopbackOnly ...............   Passed    0.47 sec
       Start 18: WebSecurity.PasswordsNeverReturned
-18/69 Test #18: WebSecurity.PasswordsNeverReturned ............................   Passed    0.33 sec
+18/76 Test #18: WebSecurity.PasswordsNeverReturned ..............................   Passed    0.52 sec
       Start 19: AppointmentFixture.TC_APT_01_BookValidSlot
-19/69 Test #19: AppointmentFixture.TC_APT_01_BookValidSlot ....................   Passed    0.03 sec
+19/76 Test #19: AppointmentFixture.TC_APT_01_BookValidSlot ......................   Passed    0.04 sec
       Start 20: AppointmentFixture.TC_APT_02_ConflictsAndAlternatives
-20/69 Test #20: AppointmentFixture.TC_APT_02_ConflictsAndAlternatives .........   Passed    0.03 sec
+20/76 Test #20: AppointmentFixture.TC_APT_02_ConflictsAndAlternatives ...........   Passed    0.04 sec
       Start 21: RoleEnforcement.TC_AUTH_03_EveryServiceDeniesForbiddenRoles
-21/69 Test #21: RoleEnforcement.TC_AUTH_03_EveryServiceDeniesForbiddenRoles ...   Passed    0.27 sec
+21/76 Test #21: RoleEnforcement.TC_AUTH_03_EveryServiceDeniesForbiddenRoles .....   Passed    0.46 sec
       Start 22: RoleEnforcement.TC_AUTH_03_MenuMatrix
-22/69 Test #22: RoleEnforcement.TC_AUTH_03_MenuMatrix .........................   Passed    0.02 sec
+22/76 Test #22: RoleEnforcement.TC_AUTH_03_MenuMatrix ...........................   Passed    0.03 sec
       Start 23: AuditCompleteness.TC_SEC_03_EntriesAndContent
-23/69 Test #23: AuditCompleteness.TC_SEC_03_EntriesAndContent .................   Passed    0.34 sec
+23/76 Test #23: AuditCompleteness.TC_SEC_03_EntriesAndContent ...................   Passed    0.52 sec
       Start 24: AuditCompleteness.LockoutLogged
-24/69 Test #24: AuditCompleteness.LockoutLogged ...............................   Passed    0.38 sec
+24/76 Test #24: AuditCompleteness.LockoutLogged .................................   Passed    0.62 sec
       Start 25: AuthFixture.TC_AUTH_01_ValidLogin
-25/69 Test #25: AuthFixture.TC_AUTH_01_ValidLogin .............................   Passed    0.15 sec
+25/76 Test #25: AuthFixture.TC_AUTH_01_ValidLogin ...............................   Passed    0.25 sec
       Start 26: AuthFixture.TC_AUTH_02_LockoutAndGenericError
-26/69 Test #26: AuthFixture.TC_AUTH_02_LockoutAndGenericError .................   Passed    0.24 sec
+26/76 Test #26: AuthFixture.TC_AUTH_02_LockoutAndGenericError ...................   Passed    0.41 sec
       Start 27: AuthFixture.TC_AUTH_04_UserManagement
-27/69 Test #27: AuthFixture.TC_AUTH_04_UserManagement .........................   Passed    0.39 sec
+27/76 Test #27: AuthFixture.TC_AUTH_04_UserManagement ...........................   Passed    0.35 sec
       Start 28: AuthFixture.TC_SEC_01_PasswordsStoredOnlyAsSaltedHash
-28/69 Test #28: AuthFixture.TC_SEC_01_PasswordsStoredOnlyAsSaltedHash .........   Passed    0.15 sec
+28/76 Test #28: AuthFixture.TC_SEC_01_PasswordsStoredOnlyAsSaltedHash ...........   Passed    0.26 sec
       Start 29: AuthFixture.BootstrapOnlyOnFirstRun
-29/69 Test #29: AuthFixture.BootstrapOnlyOnFirstRun ...........................   Passed    0.12 sec
+29/76 Test #29: AuthFixture.BootstrapOnlyOnFirstRun .............................   Passed    0.20 sec
       Start 30: BackupFixture.TC_DATA_02_BackupAndRestore
-30/69 Test #30: BackupFixture.TC_DATA_02_BackupAndRestore .....................   Passed    0.10 sec
+30/76 Test #30: BackupFixture.TC_DATA_02_BackupAndRestore .......................   Passed    0.14 sec
       Start 31: BackupFixture.TC_PERF_02_StartupUnder5Seconds
-31/69 Test #31: BackupFixture.TC_PERF_02_StartupUnder5Seconds .................   Passed    0.41 sec
+31/76 Test #31: BackupFixture.TC_PERF_02_StartupUnder5Seconds ...................   Passed    0.67 sec
       Start 32: ConsultFixture.TC_CON_01_RecordConsultation
-32/69 Test #32: ConsultFixture.TC_CON_01_RecordConsultation ...................   Passed    0.03 sec
+32/76 Test #32: ConsultFixture.TC_CON_01_RecordConsultation .....................   Passed    0.04 sec
       Start 33: ConsultationRules.ValidationAndAge
-33/69 Test #33: ConsultationRules.ValidationAndAge ............................   Passed    0.02 sec
+33/76 Test #33: ConsultationRules.ValidationAndAge ..............................   Passed    0.03 sec
       Start 34: DataFixture.TC_DATA_01_FullRestartAndFailedSave
-34/69 Test #34: DataFixture.TC_DATA_01_FullRestartAndFailedSave ...............   Passed    0.15 sec
+34/76 Test #34: DataFixture.TC_DATA_01_FullRestartAndFailedSave .................   Passed    0.25 sec
       Start 35: DataFixture.TC_SEC_05_OwnerOnlyPermissions
-35/69 Test #35: DataFixture.TC_SEC_05_OwnerOnlyPermissions ....................   Passed    0.05 sec
+35/76 Test #35: DataFixture.TC_SEC_05_OwnerOnlyPermissions ......................   Passed    0.09 sec
       Start 36: DoctorFixture.TC_DOC_01_ProfilesAvailabilityAndList
-36/69 Test #36: DoctorFixture.TC_DOC_01_ProfilesAvailabilityAndList ...........   Passed    0.02 sec
+36/76 Test #36: DoctorFixture.TC_DOC_01_ProfilesAvailabilityAndList .............   Passed    0.04 sec
       Start 37: FileStoreFixture.TC_DATA_01_AtomicWriteAndLoad
-37/69 Test #37: FileStoreFixture.TC_DATA_01_AtomicWriteAndLoad ................   Passed    0.03 sec
+37/76 Test #37: FileStoreFixture.TC_DATA_01_AtomicWriteAndLoad ..................   Passed    0.03 sec
       Start 38: FileStoreFixture.TC_DATA_01_WriteFailureKeepsOldData
-38/69 Test #38: FileStoreFixture.TC_DATA_01_WriteFailureKeepsOldData ..........   Passed    0.02 sec
+38/76 Test #38: FileStoreFixture.TC_DATA_01_WriteFailureKeepsOldData ............   Passed    0.03 sec
       Start 39: HistoryFixture.TC_CON_02_HistoryAndPrivacy
-39/69 Test #39: HistoryFixture.TC_CON_02_HistoryAndPrivacy ....................   Passed    0.03 sec
+39/76 Test #39: HistoryFixture.TC_CON_02_HistoryAndPrivacy ......................   Passed    0.04 sec
       Start 40: HistoryFixture.TC_CON_03_ImmutableWithAddendum
-40/69 Test #40: HistoryFixture.TC_CON_03_ImmutableWithAddendum ................   Passed    0.03 sec
+40/76 Test #40: HistoryFixture.TC_CON_03_ImmutableWithAddendum ..................   Passed    0.04 sec
       Start 41: Integrity.ChecksumLineWrittenAndChecked
-41/69 Test #41: Integrity.ChecksumLineWrittenAndChecked .......................   Passed    0.02 sec
+41/76 Test #41: Integrity.ChecksumLineWrittenAndChecked .........................   Passed    0.03 sec
       Start 42: Integrity.TC_SEC_06_TamperDetectedAndRestored
-42/69 Test #42: Integrity.TC_SEC_06_TamperDetectedAndRestored .................   Passed    0.38 sec
+42/76 Test #42: Integrity.TC_SEC_06_TamperDetectedAndRestored ...................   Passed    0.63 sec
       Start 43: PatientFixture.TC_PAT_01_RegisterAndReload
-43/69 Test #43: PatientFixture.TC_PAT_01_RegisterAndReload ....................   Passed    0.02 sec
+43/76 Test #43: PatientFixture.TC_PAT_01_RegisterAndReload ......................   Passed    0.04 sec
       Start 44: PatientFixture.TC_PAT_02_Validation
-44/69 Test #44: PatientFixture.TC_PAT_02_Validation ...........................   Passed    0.02 sec
+44/76 Test #44: PatientFixture.TC_PAT_02_Validation .............................   Passed    0.03 sec
       Start 45: PatientFixture.TC_PAT_03_DuplicateNeedsConfirmation
-45/69 Test #45: PatientFixture.TC_PAT_03_DuplicateNeedsConfirmation ...........   Passed    0.02 sec
+45/76 Test #45: PatientFixture.TC_PAT_03_DuplicateNeedsConfirmation .............   Passed    0.03 sec
       Start 46: PatientFixture.TC_PAT_04_SearchAndPaging
-46/69 Test #46: PatientFixture.TC_PAT_04_SearchAndPaging ......................   Passed    0.04 sec
+46/76 Test #46: PatientFixture.TC_PAT_04_SearchAndPaging ........................   Passed    0.04 sec
       Start 47: PatientFixture.TC_PAT_05_UpdateWithAudit
-47/69 Test #47: PatientFixture.TC_PAT_05_UpdateWithAudit ......................   Passed    0.02 sec
+47/76 Test #47: PatientFixture.TC_PAT_05_UpdateWithAudit ........................   Passed    0.04 sec
       Start 48: PatientFixture.TC_SEC_02_LongInputAndRole
-48/69 Test #48: PatientFixture.TC_SEC_02_LongInputAndRole .....................   Passed    0.02 sec
+48/76 Test #48: PatientFixture.TC_SEC_02_LongInputAndRole .......................   Passed    0.03 sec
       Start 49: PatientDeactivate.TC_PAT_06_AdminOnlyNeverDeleted
-49/69 Test #49: PatientDeactivate.TC_PAT_06_AdminOnlyNeverDeleted .............   Passed    0.28 sec
+49/76 Test #49: PatientDeactivate.TC_PAT_06_AdminOnlyNeverDeleted ...............   Passed    0.46 sec
       Start 50: Performance.TC_PERF_02_BookCancelRescheduleAtFullLoad
-50/69 Test #50: Performance.TC_PERF_02_BookCancelRescheduleAtFullLoad .........   Passed    9.21 sec
+50/76 Test #50: Performance.TC_PERF_02_BookCancelRescheduleAtFullLoad ...........   Passed   15.41 sec
       Start 51: Performance.TC_PERF_01_SearchAtFullCapacity
-51/69 Test #51: Performance.TC_PERF_01_SearchAtFullCapacity ...................   Passed    0.51 sec
+51/76 Test #51: Performance.TC_PERF_01_SearchAtFullCapacity .....................   Passed    0.83 sec
       Start 52: ReportFixture.TC_RPT_01_DailyReportAndCsv
-52/69 Test #52: ReportFixture.TC_RPT_01_DailyReportAndCsv .....................   Passed    0.03 sec
+52/76 Test #52: ReportFixture.TC_RPT_01_DailyReportAndCsv .......................   Passed    0.04 sec
       Start 53: ReportFixture.TC_RPT_02_Workload
-53/69 Test #53: ReportFixture.TC_RPT_02_Workload ..............................   Passed    0.03 sec
+53/76 Test #53: ReportFixture.TC_RPT_02_Workload ................................   Passed    0.04 sec
       Start 54: MoveFixture.TC_APT_04_AtomicReschedule
-54/69 Test #54: MoveFixture.TC_APT_04_AtomicReschedule ........................   Passed    0.02 sec
+54/76 Test #54: MoveFixture.TC_APT_04_AtomicReschedule ..........................   Passed    0.04 sec
       Start 55: MoveFixture.TC_APT_05_DailySchedule
-55/69 Test #55: MoveFixture.TC_APT_05_DailySchedule ...........................   Passed    0.03 sec
+55/76 Test #55: MoveFixture.TC_APT_05_DailySchedule .............................   Passed    0.04 sec
       Start 56: SecurityCore.TC_AUTH_03_RoleMatrix
-56/69 Test #56: SecurityCore.TC_AUTH_03_RoleMatrix ............................   Passed    0.02 sec
+56/76 Test #56: SecurityCore.TC_AUTH_03_RoleMatrix ..............................   Passed    0.03 sec
       Start 57: SecurityCore.TC_SEC_01_SaltedHash
-57/69 Test #57: SecurityCore.TC_SEC_01_SaltedHash .............................   Passed    0.14 sec
+57/76 Test #57: SecurityCore.TC_SEC_01_SaltedHash ...............................   Passed    0.25 sec
       Start 58: SecurityCore.SessionsAreUniqueAndEnd
-58/69 Test #58: SecurityCore.SessionsAreUniqueAndEnd ..........................   Passed    0.02 sec
+58/76 Test #58: SecurityCore.SessionsAreUniqueAndEnd ............................   Passed    0.03 sec
       Start 59: SecurityCore.AuditIsAppendOnlyAndHasNoSecrets
-59/69 Test #59: SecurityCore.AuditIsAppendOnlyAndHasNoSecrets .................   Passed    0.02 sec
+59/76 Test #59: SecurityCore.AuditIsAppendOnlyAndHasNoSecrets ...................   Passed    0.03 sec
       Start 60: Session.TC_SEC_04_IdleTimeout
-60/69 Test #60: Session.TC_SEC_04_IdleTimeout .................................   Passed    0.02 sec
+60/76 Test #60: Session.TC_SEC_04_IdleTimeout ...................................   Passed    0.03 sec
       Start 61: Password.TC_AUTH_05_ChangePassword
-61/69 Test #61: Password.TC_AUTH_05_ChangePassword ............................   Passed    0.55 sec
+61/76 Test #61: Password.TC_AUTH_05_ChangePassword ..............................   Passed    0.93 sec
       Start 62: AuditViewer.TC_SEC_03_FilterByDateAndUser
-62/69 Test #62: AuditViewer.TC_SEC_03_FilterByDateAndUser .....................   Passed    0.02 sec
-      Start 63: Skeleton.Sha256KnownVectors
-63/69 Test #63: Skeleton.Sha256KnownVectors ...................................   Passed    0.02 sec
-      Start 64: Skeleton.ResultCarriesValueOrError
-64/69 Test #64: Skeleton.ResultCarriesValueOrError ............................   Passed    0.02 sec
-      Start 65: Skeleton.CodecRoundTripWithPipesAndBackslashes
-65/69 Test #65: Skeleton.CodecRoundTripWithPipesAndBackslashes ................   Passed    0.02 sec
-      Start 66: Skeleton.DateTimeHelpers
-66/69 Test #66: Skeleton.DateTimeHelpers ......................................   Passed    0.02 sec
-      Start 67: Skeleton.ValidatorRules
-67/69 Test #67: Skeleton.ValidatorRules .......................................   Passed    0.02 sec
-      Start 68: StatusFixture.TC_APT_03_CancelFreesSlot
-68/69 Test #68: StatusFixture.TC_APT_03_CancelFreesSlot .......................   Passed    0.03 sec
-      Start 69: StatusFixture.TC_APT_06_StatusTransitions
-69/69 Test #69: StatusFixture.TC_APT_06_StatusTransitions .....................   Passed    0.03 sec
+62/76 Test #62: AuditViewer.TC_SEC_03_FilterByDateAndUser .......................   Passed    0.04 sec
+      Start 63: SF1Paths.TC_AUTH_01_FirstRunAndLoginInputRules
+63/76 Test #63: SF1Paths.TC_AUTH_01_FirstRunAndLoginInputRules ..................   Passed    0.09 sec
+      Start 64: SF1Paths.TC_AUTH_04_UserStatusRules
+64/76 Test #64: SF1Paths.TC_AUTH_04_UserStatusRules .............................   Passed    0.51 sec
+      Start 65: SF1Paths.TC_DATA_01_FailedSaveOfUsersChangesNothing
+65/76 Test #65: SF1Paths.TC_DATA_01_FailedSaveOfUsersChangesNothing .............   Passed    0.73 sec
+      Start 66: SF1Paths.TC_SEC_06_MalformedUsersFileIsE040
+66/76 Test #66: SF1Paths.TC_SEC_06_MalformedUsersFileIsE040 .....................   Passed    0.04 sec
+      Start 67: SF1Paths.TC_SEC_03_AuditToleratesDamagedLinesAndMissingFolder
+67/76 Test #67: SF1Paths.TC_SEC_03_AuditToleratesDamagedLinesAndMissingFolder ...   Passed    0.03 sec
+      Start 68: SF1Paths.TC_WEB_01_FirstRunSetupThroughTheWebsite
+68/76 Test #68: SF1Paths.TC_WEB_01_FirstRunSetupThroughTheWebsite ...............   Passed    0.15 sec
+      Start 69: SF1Paths.TC_WEB_02_AccountRoutesRefuseBadInput
+69/76 Test #69: SF1Paths.TC_WEB_02_AccountRoutesRefuseBadInput ..................   Passed    0.79 sec
+      Start 70: Skeleton.Sha256KnownVectors
+70/76 Test #70: Skeleton.Sha256KnownVectors .....................................   Passed    0.04 sec
+      Start 71: Skeleton.ResultCarriesValueOrError
+71/76 Test #71: Skeleton.ResultCarriesValueOrError ..............................   Passed    0.03 sec
+      Start 72: Skeleton.CodecRoundTripWithPipesAndBackslashes
+72/76 Test #72: Skeleton.CodecRoundTripWithPipesAndBackslashes ..................   Passed    0.03 sec
+      Start 73: Skeleton.DateTimeHelpers
+73/76 Test #73: Skeleton.DateTimeHelpers ........................................   Passed    0.03 sec
+      Start 74: Skeleton.ValidatorRules
+74/76 Test #74: Skeleton.ValidatorRules .........................................   Passed    0.03 sec
+      Start 75: StatusFixture.TC_APT_03_CancelFreesSlot
+75/76 Test #75: StatusFixture.TC_APT_03_CancelFreesSlot .........................   Passed    0.04 sec
+      Start 76: StatusFixture.TC_APT_06_StatusTransitions
+76/76 Test #76: StatusFixture.TC_APT_06_StatusTransitions .......................   Passed    0.04 sec
 
-100% tests passed, 0 tests failed out of 69
+100% tests passed, 0 tests failed out of 76
 
-Total Test time (real) =  20.59 sec
+Total Test time (real) =  35.62 sec
 

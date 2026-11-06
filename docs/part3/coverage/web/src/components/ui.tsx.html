@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.22% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>26/36</span>
+                <span class='fraction'>30/36</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">94.11% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>16/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">44.44% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/9</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.22% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>26/36</span>
+                <span class='fraction'>30/36</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -126,41 +126,41 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">94x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">82x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -191,16 +191,16 @@ export function PageHeader({ title, subtitle, actions }: { title: string; subtit
   );
 }
 &nbsp;
-export const errorText = <span class="fstat-no" title="function not covered" >(e: unknown) =&gt; (e instanceof ApiError ? e.text : 'E099: Unexpected error.');</span>
+export const errorText = (e: unknown) =&gt; (e instanceof ApiError ? e.<span class="branch-0 cbranch-no" title="branch not covered" >text : 'E099: Unexpected error.');</span>
 &nbsp;
 // Error shown inside a form, with the HMS code and the message naming the field and the rule.
 export function ErrorBox({ error }: { error: unknown }) {
-  if (!error) return <span class="branch-0 cbranch-no" title="branch not covered" >null;</span>
-<span class="cstat-no" title="statement not covered" >  return &lt;Alert color="red" icon={&lt;IconAlertCircle size={18} /&gt;} title="Not saved"&gt;{errorText(error)}&lt;/Alert&gt;;</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+  if (!error) return null;
+  return &lt;Alert color="red" icon={&lt;IconAlertCircle size={18} /&gt;} title="Not saved"&gt;{errorText(error)}&lt;/Alert&gt;;
+}
 &nbsp;
-export const notifyOk = <span class="fstat-no" title="function not covered" >(message: string) =&gt; notifications.show({ color: 'teal', icon: &lt;IconCheck size={18} /&gt;, title: 'Done', message });</span>
-export const notifyError = <span class="fstat-no" title="function not covered" >(e: unknown) =&gt; notifications.show({ color: 'red', title: 'Error', message: errorText(e), autoClose: 8000 });</span>
+export const notifyOk = (message: string) =&gt; notifications.show({ color: 'teal', icon: &lt;IconCheck size={18} /&gt;, title: 'Done', message });
+export const notifyError = (e: unknown) =&gt; notifications.show({ color: 'red', title: 'Error', message: errorText(e), autoClose: 8000 });
 &nbsp;
 const statusColor: Record&lt;AppointmentStatus, string&gt; = { SCHEDULED: 'blue', COMPLETED: 'teal', CANCELLED: 'gray', NO_SHOW: 'orange' };
 const statusLabel: Record&lt;AppointmentStatus, string&gt; = { SCHEDULED: 'Scheduled', COMPLETED: 'Completed', CANCELLED: 'Cancelled', NO_SHOW: 'No-show' };
@@ -208,9 +208,9 @@ export function StatusBadge({ status }: { status: AppointmentStatus }) {
   return &lt;Badge color={statusColor[status]} variant="light"&gt;{statusLabel[status]}&lt;/Badge&gt;;
 }
 &nbsp;
-export <span class="fstat-no" title="function not covered" >function ActiveBadge({ active }: { active: boolean }) {</span>
-<span class="cstat-no" title="statement not covered" >  return &lt;Badge color={active ? 'teal' : 'gray'} variant="light"&gt;{active ? 'Active' : 'Inactive'}&lt;/Badge&gt;;</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+export function ActiveBadge({ active }: { active: boolean }) {
+  return &lt;Badge color={active ? 'teal' : 'gray'} variant="light"&gt;{active ? 'Active' : 'Inactive'}&lt;/Badge&gt;;
+}
 &nbsp;
 export function EmptyState({ children }: { children: ReactNode }) {
   return &lt;Text c="dimmed" ta="center" py="xl"&gt;{children}&lt;/Text&gt;;
@@ -232,7 +232,7 @@ export <span class="fstat-no" title="function not covered" >function ComingSoon(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-05T06:32:43.639Z
+                at 2026-11-06T17:28:48.229Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

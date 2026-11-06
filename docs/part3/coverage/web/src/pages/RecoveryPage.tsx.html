@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.45% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/31</span>
+                <span class='fraction'>31/31</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">88.88% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.45% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/31</span>
+                <span class='fraction'>31/31</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -109,36 +109,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Shown instead of the login when a data file failed its checksum at start-up (HMS-SEC-007).
 // An Administrator of the latest backup logs in to restore it.
 import { Alert, Button, PasswordInput, Stack, Text, TextInput } from '@mantine/core';
@@ -146,37 +146,37 @@ import { FormEvent, useState } from 'react';
 import { api } from '../api';
 import { ErrorBox, notifyOk } from '../components/ui';
 &nbsp;
-export <span class="fstat-no" title="function not covered" >function RecoveryPanel({ file, latestBackup, onDone }: { file: string; latestBackup: string; onDone: () =&gt; void }) {</span>
-<span class="cstat-no" title="statement not covered" >  const [username, setUsername] = useState('');</span>
-<span class="cstat-no" title="statement not covered" >  const [password, setPassword] = useState('');</span>
-<span class="cstat-no" title="statement not covered" >  const [error, setError] = useState&lt;unknown&gt;(null);</span>
-<span class="cstat-no" title="statement not covered" >  const [busy, setBusy] = useState(false);</span>
-<span class="cstat-no" title="statement not covered" >  const submit = async (e: FormEvent) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    e.preventDefault();</span>
-<span class="cstat-no" title="statement not covered" >    setBusy(true); setError(null);</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      const r = await api.post&lt;{ restored: string }&gt;('/api/recovery/restore', { username, password });</span>
-<span class="cstat-no" title="statement not covered" >      notifyOk(`Backup ${r.restored} restored. Please log in.`);</span>
-<span class="cstat-no" title="statement not covered" >      onDone();</span>
-<span class="cstat-no" title="statement not covered" >    } catch (err) { setError(err); } finally { setBusy(false); }</span>
-<span class="cstat-no" title="statement not covered" >  };</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;form onSubmit={submit}&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;Stack&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Alert color="red" title="E040: Data file damaged"&gt;</span>
-<span class="cstat-no" title="statement not covered" >          The file &lt;b&gt;{file || 'a data file'}&lt;/b&gt; was changed outside HMS or is damaged, so HMS did not load it.</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/Alert&gt;</span>
-<span class="cstat-no" title="statement not covered" >        {latestBackup</span>
-<span class="cstat-no" title="statement not covered" >          ? &lt;Text size="sm"&gt;Restore the latest backup &lt;b&gt;{latestBackup}&lt;/b&gt;? An Administrator must log in to confirm.&lt;/Text&gt;</span>
-<span class="cstat-no" title="statement not covered" >          : &lt;Text size="sm" c="red"&gt;No backup is available. HMS cannot start with damaged data.&lt;/Text&gt;}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;TextInput label="Administrator username" value={username} onChange={(e) =&gt; setUsername(e.currentTarget.value)} required /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;PasswordInput label="Password" value={password} onChange={(e) =&gt; setPassword(e.currentTarget.value)} required /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        {error !== null &amp;&amp; &lt;ErrorBox error={error} /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Button type="submit" color="red" loading={busy} disabled={!latestBackup}&gt;Restore latest backup&lt;/Button&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/Stack&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/form&gt;</span>
+export function RecoveryPanel({ file, latestBackup, onDone }: { file: string; latestBackup: string; onDone: () =&gt; void }) {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState&lt;unknown&gt;(null);
+  const [busy, setBusy] = useState(false);
+  const submit = async (e: FormEvent) =&gt; {
+    e.preventDefault();
+    setBusy(true); setError(null);
+    try {
+      const r = await api.post&lt;{ restored: string }&gt;('/api/recovery/restore', { username, password });
+      notifyOk(`Backup ${r.restored} restored. Please log in.`);
+      onDone();
+    } catch (err) { setError(err); } finally { setBusy(false); }
+  };
+  return (
+    &lt;form onSubmit={submit}&gt;
+      &lt;Stack&gt;
+        &lt;Alert color="red" title="E040: Data file damaged"&gt;
+          The file &lt;b&gt;{<span class="branch-0 cbranch-no" title="branch not covered" >file || 'a data file'}&lt;</span>/b&gt; was changed outside HMS or is damaged, so HMS did not load it.
+        &lt;/Alert&gt;
+        {latestBackup
+          ? &lt;Text size="sm"&gt;Restore the latest backup &lt;b&gt;{latestBackup}&lt;/b&gt;? An Administrator must log in to confirm.&lt;/Text&gt;
+          : &lt;Text size="sm" c="red"&gt;No backup is available. HMS cannot start with damaged data.&lt;/Text&gt;}
+        &lt;TextInput label="Administrator username" value={username} onChange={(e) =&gt; setUsername(e.currentTarget.value)} required /&gt;
+        &lt;PasswordInput label="Password" value={password} onChange={(e) =&gt; setPassword(e.currentTarget.value)} required /&gt;
+        {error !== null &amp;&amp; &lt;ErrorBox error={error} /&gt;}
+        &lt;Button type="submit" color="red" loading={busy} disabled={!latestBackup}&gt;Restore latest backup&lt;/Button&gt;
+      &lt;/Stack&gt;
+    &lt;/form&gt;
   );
-<span class="cstat-no" title="statement not covered" >}</span>
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -184,7 +184,7 @@ export <span class="fstat-no" title="function not covered" >function RecoveryPan
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-05T06:32:43.639Z
+                at 2026-11-06T17:28:48.229Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
